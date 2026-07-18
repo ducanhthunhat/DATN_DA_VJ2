@@ -9,10 +9,12 @@ public class PlayerCombatController : MonoBehaviour
     [SerializeField]
     private float inputTimer, attack1Radius, attack1Damage;
     [SerializeField]
+    private float stunDamageAmount = 1f;
+    [SerializeField]
     private Transform attack1HitBoxPos;
     [SerializeField]
     private LayerMask whatIsDamageable;
-    
+
     private bool gotInput, isAttacking, isFirstAttack;
 
     private float lastInputTime = Mathf.NegativeInfinity;
@@ -66,7 +68,7 @@ public class PlayerCombatController : MonoBehaviour
             }
         }
 
-        if(Time.time >= lastInputTime + inputTimer)
+        if (Time.time >= lastInputTime + inputTimer)
         {
             //Wait for new input
             gotInput = false;
@@ -79,6 +81,7 @@ public class PlayerCombatController : MonoBehaviour
 
         attackDetails.damageAmount = attack1Damage;
         attackDetails.position = transform.position;
+        attackDetails.stunDamageAmount = stunDamageAmount;
 
         foreach (Collider2D collider in detectedObjects)
         {
@@ -112,7 +115,7 @@ public class PlayerCombatController : MonoBehaviour
             }
 
             PC.Knockback(direction);
-        }        
+        }
     }
 
     private void OnDrawGizmos()

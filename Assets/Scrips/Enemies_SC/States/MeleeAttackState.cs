@@ -6,6 +6,7 @@ public class MeleeAttackState : AttackState
 {
     protected D_MeleeAttack stateData;
     protected AttackDetails attackDetails;
+    protected float nextAttackTime;
 
     public MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData) : base(entity, stateMachine, animBoolName, attackPosition)
     {
@@ -22,6 +23,7 @@ public class MeleeAttackState : AttackState
         base.Enter();
         attackDetails.damageAmount = stateData.attackDamage;
         attackDetails.position = attackPosition.position;
+        nextAttackTime = Time.time + entity.entityData.attackCooldown;
     }
 
     public override void Exit()
@@ -42,7 +44,12 @@ public class MeleeAttackState : AttackState
     public override void TriggerAttack()
     {
         base.TriggerAttack();
-        
+
+    }
+
+    protected bool CanTransitionAfterCooldown()
+    {
+        return Time.time >= nextAttackTime;
     }
 
     public override void FinishAttack()

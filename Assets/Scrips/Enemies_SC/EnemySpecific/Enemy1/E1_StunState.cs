@@ -2,11 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class E1_MeleeAttackState : MeleeAttackState
+public class E1_StunState : StunState
 {
     private Enemy1 enemy;
-
-    public E1_MeleeAttackState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, attackPosition, stateData)
+    public E1_StunState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_StunState stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
         this.enemy = enemy;
     }
@@ -19,7 +18,6 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
-        enemy.SetVelocity(0f);
     }
 
     public override void Exit()
@@ -30,29 +28,27 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void LogicUpdate()
     {
         base.LogicUpdate();
-        if (isAnimationFinished && CanTransitionAfterCooldown())
+
+        if (isStunTimeOver)
         {
-            if (isPlayerInMinAgroRange)
+            if (performCloseRangeAction)
             {
-                stateMachine.ChangeState(enemy.playerDetectedState);
+                stateMachine.ChangeState(enemy.meleeAttackState);
+            }
+            else if (isPlayerInMinAgroRange)
+            {
+                stateMachine.ChangeState(enemy.chargeState);
             }
             else
             {
+                enemy.lookForPlayerState.SetTurnImmediately(true);
                 stateMachine.ChangeState(enemy.lookForPlayerState);
             }
         }
-
     }
 
     public override void PhysicsUpdate()
     {
         base.PhysicsUpdate();
     }
-
-    public override void TriggerAttack()
-    {
-        base.TriggerAttack();
-    }
-
-
 }
