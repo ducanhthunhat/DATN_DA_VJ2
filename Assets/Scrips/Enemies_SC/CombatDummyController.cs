@@ -47,10 +47,10 @@ public class CombatDummyController : MonoBehaviour
         CheckKnockback();
     }
 
-    private void Damage(float[] attackDetails)
+    private void Damage(AttackDetails details)
     {
-        currentHealth -= attackDetails[0];
-        if(attackDetails[1] < transform.position.x)
+        currentHealth -= details.damageAmount;
+        if(details.position.x < transform.position.x)
         {
             playerFacingDirection = 1;
         }
@@ -72,7 +72,7 @@ public class CombatDummyController : MonoBehaviour
         aliveAnim.SetBool("playerOnLeft", playerOnLeft);
         aliveAnim.SetTrigger("damage");
 
-        if(attackDetails[1] > aliveAnim.transform.position.x)
+        if(details.position.x > aliveAnim.transform.position.x)
         {
             playerOnLeft = true;
         }

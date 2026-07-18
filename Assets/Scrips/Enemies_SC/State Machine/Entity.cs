@@ -24,6 +24,7 @@ public class Entity : MonoBehaviour
     private Vector2 velocityWorkspace;
 
     protected bool isStunned;
+    protected bool isDead;
 
 
     public virtual void Start()
@@ -117,6 +118,8 @@ public class Entity : MonoBehaviour
         currentStunResistance -= attackDetails.stunDamageAmount;
 
         DamageHop(entityData.damageHopSpeed);
+
+        Instantiate(entityData.hitParticle, aliveGO.transform.position, Quaternion.Euler(0,0, Random.Range(0, 360)));
         if (attackDetails.position.x > aliveGO.transform.position.x)
         {
             lastDamageDirection = -1;
@@ -129,6 +132,11 @@ public class Entity : MonoBehaviour
         if (currentStunResistance <= 0)
         {
             isStunned = true;
+        }
+
+        if(currentHealth <= 0)
+        {
+            isDead = true;
         }
     }
     public virtual void Flip()
