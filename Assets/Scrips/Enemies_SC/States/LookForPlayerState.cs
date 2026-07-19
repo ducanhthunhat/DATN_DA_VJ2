@@ -46,14 +46,14 @@ public class LookForPlayerState : State
     {
         base.LogicUpdate();
 
-        if(turnImmediately)
+        if (turnImmediately)
         {
             entity.Flip();
             lastTurnTime = Time.time;
             amountOfTurnsDone++;
             turnImmediately = false;
         }
-        else if (Time.time >= lastTurnTime + stateData.timeBetweenTurns && !isAllTurnsDone)
+        else if (!isAllTurnsDone && Time.time >= lastTurnTime + stateData.timeBetweenTurns)
         {
             entity.Flip();
             lastTurnTime = Time.time;
@@ -65,9 +65,13 @@ public class LookForPlayerState : State
             isAllTurnsDone = true;
         }
 
-        if (Time.time >= lastTurnTime + stateData.timeBetweenTurns && isAllTurnsDone)
+        if (isAllTurnsDone)
         {
-            isAllTurnsDone = true;
+            isAllTurnsTimeDone = Time.time >= lastTurnTime + stateData.timeBetweenTurns;
+        }
+        else
+        {
+            isAllTurnsTimeDone = false;
         }
 
     }
