@@ -20,7 +20,7 @@ MonoBehaviour:
   wallJumpAngle: {x: 1, y: 2}
   coyoteTime: 0.2
   variableJumpHeightMultiplier: 0.5
-  wallSlideVelocity: 3
+  wallSlideVelocity: 2
   wallClimbVelocity: 3
   startOffset: {x: 0, y: 0}
   stopOffset: {x: 0, y: 0}
@@ -36,6 +36,7 @@ MonoBehaviour:
   crouchColliderHeight: 0.8
   standColliderHeight: 1.6
   groundCheckRadius: 0.3
+  wallCheckDistance: 0.5
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

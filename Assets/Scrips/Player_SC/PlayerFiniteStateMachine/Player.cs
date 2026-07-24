@@ -13,9 +13,9 @@ public class Player : MonoBehaviour
     public PlayerJumpState JumpState { get; private set; }
     public PlayerInAirState InAirState { get; private set; }
     public PlayerLandState LandState { get; private set; }
-    // public PlayerWallSlideState WallSlideState { get; private set; }
-    // public PlayerWallGrabState WallGrabState { get; private set; }
-    // public PlayerWallClimbState WallClimbState { get; private set; }
+    public PlayerWallSlideState WallSlideState { get; private set; }
+    public PlayerWallGrabState WallGrabState { get; private set; }
+    public PlayerWallClimbState WallClimbState { get; private set; }
     // public PlayerWallJumpState WallJumpState { get; private set; }
     // public PlayerLedgeClimbState LedgeClimbState { get; private set; }
     // public PlayerDashState DashState { get; private set; }
@@ -35,14 +35,16 @@ public class Player : MonoBehaviour
     public Rigidbody2D RB { get; private set; }
     public Transform DashDirectionIndicator { get; private set; }
     public BoxCollider2D MovementCollider { get; private set; }
-    public Vector2 CurrentVelocity {get; private set;}
-    public int FacingDirection{get; private set;}
+    public Vector2 CurrentVelocity { get; private set; }
+    public int FacingDirection { get; private set; }
     // public PlayerInventory Inventory { get; private set; }
     #endregion
-#region  CheckTransforms
-[SerializeField]
-private Transform groundCheck;
-#endregion
+    #region  CheckTransforms
+    [SerializeField]
+    private Transform groundCheck;
+    [SerializeField]
+    private Transform wallCheck;
+    #endregion
     #region Other Variables         
 
     private Vector2 workspace;
@@ -60,9 +62,9 @@ private Transform groundCheck;
         JumpState = new PlayerJumpState(this, StateMachine, playerData, "inAir");
         InAirState = new PlayerInAirState(this, StateMachine, playerData, "inAir");
         LandState = new PlayerLandState(this, StateMachine, playerData, "land");
-        // WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
-        // WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
-        // WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
+        WallSlideState = new PlayerWallSlideState(this, StateMachine, playerData, "wallSlide");
+        WallGrabState = new PlayerWallGrabState(this, StateMachine, playerData, "wallGrab");
+        WallClimbState = new PlayerWallClimbState(this, StateMachine, playerData, "wallClimb");
         // WallJumpState = new PlayerWallJumpState(this, StateMachine, playerData, "inAir");
         // LedgeClimbState = new PlayerLedgeClimbState(this, StateMachine, playerData, "ledgeClimbState");
         // DashState = new PlayerDashState(this, StateMachine, playerData, "inAir");
@@ -84,7 +86,7 @@ private Transform groundCheck;
         // PrimaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         //SecondaryAttackState.SetWeapon(Inventory.weapons[(int)CombatInputs.primary]);
         StateMachine.Initialize(IdleState);
-        FacingDirection = 1 ;
+        FacingDirection = 1;
     }
 
     private void Update()
@@ -111,7 +113,7 @@ private Transform groundCheck;
 
         MovementCollider.size = workspace;
         MovementCollider.offset = center;
-    }   
+    }
     public void SetVelocityX(float velocity)
     {
         workspace.Set(velocity, CurrentVelocity.y);
@@ -130,23 +132,29 @@ private Transform groundCheck;
 
     private void AnimtionFinishTrigger() => StateMachine.CurrentState.AnimationFinishTrigger();
 
-   
-    #endregion
 
+    #endregion
+    #region CheckFuntions
     public bool CheckIfGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, playerData.groundCheckRadius, playerData.whatIsGround);
     }
+
+    public bool CheckIfTouchingWall()
+    {
+        return Physics2D.Raycast(wallCheck.position, Vector2.right * FacingDirection, playerData.wallCheckDistance, playerData.whatIsGround);
+    }
     public void CheckIfShouldFlip(int xInput)
     {
-        if(xInput != 0 && xInput != FacingDirection)
+        if (xInput != 0 && xInput != FacingDirection)
         {
             Flip();
         }
     }
+    #endregion
     private void Flip()
     {
         FacingDirection *= -1;
-        transform.Rotate(0,180,0);
+        transform.Rotate(0, 180, 0);
     }
 }
