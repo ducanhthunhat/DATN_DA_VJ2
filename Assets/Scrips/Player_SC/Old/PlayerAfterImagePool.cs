@@ -32,6 +32,10 @@ public class PlayerAfterImagePool : MonoBehaviour
         instance.SetActive(false);
         availableObjects.Enqueue(instance);
     }
+    private void PlaceAfterImage()
+    {
+        
+    }
 
     public GameObject GetFromPool()
     {

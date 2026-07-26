@@ -6,10 +6,16 @@ using UnityEngine;
 public class PlayerGroundedState : PlayerState
 {
     public int xInput;
+    protected int yInput;
+
+    protected bool isTouchingCeiling;
+
     private bool JumpInput;
     private bool grabInput;
     private bool isGrounded;
     private bool isTouchignWall;
+    private bool isTouchingLedge;
+    private bool dashInput;
     public PlayerGroundedState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
     {
     }
@@ -19,12 +25,15 @@ public class PlayerGroundedState : PlayerState
 
         isGrounded = player.CheckIfGrounded();
         isTouchignWall = player.CheckIfTouchingWall();
+        isTouchingLedge = player.CheckIfTouchingLedge();
+        isTouchingCeiling = player.CheckForCeiling();
     }
     public override void Enter()
     {
         base.Enter();
 
         player.JumpState.ResetAmoutOfJumpsLeft();
+        player.DashState.ResetCanDash();
     }
     public override void Exit()
     {
@@ -36,12 +45,13 @@ public class PlayerGroundedState : PlayerState
         base.LogicUpdate();
 
         xInput = player.InputHandler.NormInputX;
+        yInput = player.InputHandler.NormInputY;
         JumpInput = player.InputHandler.JumpInput;
         grabInput = player.InputHandler.GrabInput;
+        dashInput = player.InputHandler.DashInput;
 
         if (JumpInput && player.JumpState.CanJump())
         {
-            player.InputHandler.UseJumpInput();
             stateMachine.ChangeState(player.JumpState);
         }
         else if (!isGrounded)
@@ -49,9 +59,13 @@ public class PlayerGroundedState : PlayerState
             player.InAirState.StartCoyoteTime();
             stateMachine.ChangeState(player.InAirState);
         }
-        else if (isTouchignWall && grabInput)
+        else if (isTouchignWall && grabInput && isTouchingLedge)
         {
             stateMachine.ChangeState(player.WallGrabState);
+        }
+        else if (dashInput && player.DashState.CheckIfCanDash() && !isTouchingCeiling)
+        {
+            stateMachine.ChangeState(player.DashState);
         }
     }
 

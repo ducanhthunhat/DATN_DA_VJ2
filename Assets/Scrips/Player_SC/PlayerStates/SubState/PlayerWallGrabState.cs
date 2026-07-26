@@ -33,21 +33,24 @@ public class PlayerWallGrabState : PlayerTouchingWallState
         base.LogicUpdate();
 
         HoldPosition();
+        if (!isExitingState)
+        {
+            if (yInput > 0)
+            {
+                stateMachine.ChangeState(player.WallClimbState);
+            }
+            else if (yInput < 0 || !grabInput)
+            {
+                stateMachine.ChangeState(player.WallSlideState);
+            }
+        }
 
-        if(yInput > 0)
-        {
-            stateMachine.ChangeState(player.WallClimbState);
-        }
-        else if(yInput < 0 || !grabInput)
-        {
-            stateMachine.ChangeState(player.WallSlideState);
-        }
     }
 
     private void HoldPosition()
     {
         player.transform.position = holdPosition;
-         player.SetVelocityX(0);
+        player.SetVelocityX(0);
         player.SetVelocityY(0);
     }
 

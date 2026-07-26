@@ -13,6 +13,7 @@ public class PlayerJumpState : PlayerAbilityState
     {
         base.Enter();
 
+        player.InputHandler.UseJumpInput();
         player.SetVelocityY(playerData.jumpVelocity);
         isAbilityDone = true;
         amountOfJumpsLeft--;
