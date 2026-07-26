@@ -123,6 +123,7 @@ public class PlayerInputHandler : MonoBehaviour
 
     public void OnDashDirectionInput(InputAction.CallbackContext context)
     {
+        
         RawDashDirectionInput = context.ReadValue<Vector2>();
 
         if(playerInput.currentControlScheme == "KeyBoard")
