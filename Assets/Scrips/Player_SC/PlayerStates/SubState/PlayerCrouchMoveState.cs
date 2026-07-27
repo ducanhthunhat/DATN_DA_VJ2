@@ -22,12 +22,17 @@ public class PlayerCrouchMoveState : PlayerGroundedState
 
     public override void LogicUpdate()
     {
+        if (player.InputHandler.JumpInput)
+        {
+            player.InputHandler.UseJumpInput();
+        }
+
         base.LogicUpdate();
 
         if (!isExitingState)
         {
-            player.SetVelocityX(playerData.crouchMovementVelocity * player.FacingDirection);
-            player.CheckIfShouldFlip(xInput);
+            core.Movement.SetVelocityX(playerData.crouchMovementVelocity * core.Movement.FacingDirection);
+            core.Movement.CheckIfShouldFlip(xInput);
 
             if(xInput == 0)
             {
