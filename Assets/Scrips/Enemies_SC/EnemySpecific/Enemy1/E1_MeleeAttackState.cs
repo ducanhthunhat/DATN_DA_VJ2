@@ -19,7 +19,7 @@ public class E1_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
-        enemy.SetVelocity(0f);
+        core.Movement.SetVelocityX(0f);
     }
 
     public override void Exit()

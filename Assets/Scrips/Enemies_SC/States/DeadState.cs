@@ -21,9 +21,9 @@ public class DeadState : State
         base.Enter();
 
         Vector3 spawnPosition = entity.transform.position;
-        if (entity.aliveGO != null)
+        if (entity != null)
         {
-            spawnPosition = entity.aliveGO.transform.position;
+            spawnPosition = entity.transform.position;
         }
 
         if (stateData.deathBloodParticle != null)

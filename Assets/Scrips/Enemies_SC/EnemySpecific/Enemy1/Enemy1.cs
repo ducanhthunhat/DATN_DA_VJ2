@@ -33,9 +33,9 @@ public class Enemy1 : Entity
     [SerializeField]
     private D_DeadState deadStateData;
 
-    public override void Start()
+    public override void Awake()
     {
-        base.Start();
+        base.Awake();
 
         idleState = new E1_IdleState(this, stateMachine, "idle", idleStateData, this);
         moveState = new E1_MoveState(this, stateMachine, "move", moveStateData, this);
@@ -58,7 +58,7 @@ public class Enemy1 : Entity
     public override void Damage(AttackDetails attackDetails)
     {
         base.Damage(attackDetails);
-if (isDead)
+    if (isDead)
         {
             stateMachine.ChangeState(deadState);
         }
