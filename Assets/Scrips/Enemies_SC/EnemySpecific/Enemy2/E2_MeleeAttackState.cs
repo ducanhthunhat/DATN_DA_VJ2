@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class E2_MeleeAttackState : MeleeAttackState
 {
+     private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+    private Movement movement;
     private Enemy2 enemy;
     public E2_MeleeAttackState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, Transform attackPosition, D_MeleeAttack stateData, Enemy2 enemy) : base(etity, stateMachine, animBoolName, attackPosition, stateData)
     {
@@ -18,7 +21,7 @@ public class E2_MeleeAttackState : MeleeAttackState
     public override void Enter()
     {
         base.Enter();
-        core.Movement.SetVelocityX(0f);
+        Movement?.SetVelocityX(0f);
     }
 
     public override void Exit()

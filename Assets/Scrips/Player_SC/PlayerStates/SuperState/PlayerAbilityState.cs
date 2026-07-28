@@ -5,6 +5,12 @@ using UnityEngine;
 public class PlayerAbilityState : PlayerState
 {
     protected bool isAbilityDone;
+    protected Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+
+    private Movement movement;
+    private CollisionSenses collisionSenses;
 
     private bool isGounded;
     public PlayerAbilityState(Player player, PlayerStateMachine stateMachine, PlayerData playerData, string animBoolName) : base(player, stateMachine, playerData, animBoolName)
@@ -14,7 +20,11 @@ public class PlayerAbilityState : PlayerState
     {
         base.DoChecks();
 
-        isGounded = core.CollisionSenses.Ground;
+        if (CollisionSenses)
+        {
+            isGounded = CollisionSenses.Ground;
+
+        }
     }
 
     public override void Enter()
@@ -33,7 +43,7 @@ public class PlayerAbilityState : PlayerState
         base.LogicUpdate();
         if (isAbilityDone)
         {
-            if (isGounded && core.Movement.CurrentVelocity.y < 0.01f)
+            if (isGounded && Movement?.CurrentVelocity.y < 0.01f)
             {
                 stateMachine.ChangeState(player.IdleState);
             }

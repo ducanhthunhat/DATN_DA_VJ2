@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class E1_PlayerDetectedState : PlayerDetectedState
 {
+    private Movement Movement { get => movement ?? core.GetCoreComponent(ref movement); }
+
+    private CollisionSenses CollisionSenses { get => collisionSenses ?? core.GetCoreComponent(ref collisionSenses); }
+
+    private Movement movement;
+    private CollisionSenses collisionSenses;
     private Enemy1 enemy;
     public E1_PlayerDetectedState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData, Enemy1 enemy) : base(entity, stateMachine, animBoolName, stateData)
     {
@@ -40,7 +46,7 @@ public class E1_PlayerDetectedState : PlayerDetectedState
         }
         else if(!isDetectingLedge)
         {
-            core.Movement.Flip();
+            Movement?.Flip();
             stateMachine.ChangeState(enemy.moveState);
 
         }
