@@ -44,6 +44,7 @@ public class ChargeState : State
         {
             isChargeTimeOver = true;
         }
+        core.Movement.SetVelocityX(stateData.chargeSpeed * core.Movement.FacingDirection);
     }
 
     public override void PhysicsUpdate()
