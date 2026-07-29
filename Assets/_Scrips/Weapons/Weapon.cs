@@ -25,9 +25,12 @@ namespace DucAnh.Weapons
             }
         }
 
+        public event Action OnEnter;
+
         public event Action OnExit;
         private Animator anim;
-        private GameObject baseGameObject;
+        public GameObject BaseGameObject {get; private set;}
+        public GameObject WeaponSpriteGameObject {get; private set;}
         private AnimationEventHandler eventHandler;
         private int currentAttackCounter;
         private Timer attackCounterResetTime;
@@ -40,6 +43,8 @@ namespace DucAnh.Weapons
 
             anim.SetBool("active", true);
             anim.SetInteger("counter", currentAttackCounter);
+
+            OnEnter?.Invoke();
         }
 
 
@@ -56,10 +61,11 @@ namespace DucAnh.Weapons
 
         private void Awake()
         {
-            baseGameObject = transform.Find("Base").gameObject;
-            anim = baseGameObject.GetComponent<Animator>();
+            BaseGameObject = transform.Find("Base").gameObject;
+            WeaponSpriteGameObject = transform.Find("WeaponSprite").gameObject;
+            anim = BaseGameObject.GetComponent<Animator>();
 
-            eventHandler = baseGameObject.GetComponent<AnimationEventHandler>();
+            eventHandler = BaseGameObject.GetComponent<AnimationEventHandler>();
 
             attackCounterResetTime = new Timer(attackCounterResetCooldown);
         }
