@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
 public class LookForPlayerState : State {
@@ -80,3 +80,4 @@ public class LookForPlayerState : State {
 		turnImmediately = flip;
 	}
 }
+

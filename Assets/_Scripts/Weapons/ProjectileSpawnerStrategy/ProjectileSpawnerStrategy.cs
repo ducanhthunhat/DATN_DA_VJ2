@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.ObjectPoolSystem;
-using Bardent.ProjectileSystem;
-using Bardent.Weapons.Components;
+using System;
+using DucAnh.ObjectPoolSystem;
+using DucAnh.ProjectileSystem;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     /*
      * This is the base ProjectileSpawnerStrategy class, or, the Default spawn method. It simply spawns a projectile as requested and does nothing else.

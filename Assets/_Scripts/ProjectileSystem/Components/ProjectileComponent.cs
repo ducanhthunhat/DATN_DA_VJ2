@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
-using Bardent.ProjectileSystem.DataPackages;
+using DucAnh.ProjectileSystem.DataPackages;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /// <summary>
     /// Base class for any projectile components to implement repeated functionality

@@ -1,8 +1,8 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem.DataPackages
+namespace DucAnh.ProjectileSystem.DataPackages
 {
     [Serializable]
     public class TargetsDataPackage : ProjectileDataPackage

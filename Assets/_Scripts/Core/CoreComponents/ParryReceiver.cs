@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.Combat.Parry;
+using System;
+using DucAnh.Combat.Parry;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class ParryReceiver : CoreComponent, IParryable
     {

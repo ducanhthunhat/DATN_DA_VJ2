@@ -1,7 +1,7 @@
-﻿using Bardent.Interaction;
+using DucAnh.Interaction;
 using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     public static class ComponentUtilities
     {

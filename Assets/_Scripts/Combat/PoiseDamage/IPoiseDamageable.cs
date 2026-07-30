@@ -1,4 +1,4 @@
-﻿namespace Bardent.Combat.PoiseDamage
+namespace DucAnh.Combat.PoiseDamage
 {
     public interface IPoiseDamageable
     {

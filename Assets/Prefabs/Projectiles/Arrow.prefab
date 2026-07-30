@@ -158,7 +158,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1775009464070235437}
-        m_TargetAssemblyTypeName: Bardent.ProjectileSystem.Components.ProjectileComponent,
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileComponent,
           Assembly-CSharp
         m_MethodName: SetActiveNextFrame
         m_Mode: 6
@@ -171,7 +171,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 1548317406426355311}
-        m_TargetAssemblyTypeName: Bardent.ProjectileSystem.Components.ProjectileComponent,
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileComponent,
           Assembly-CSharp
         m_MethodName: SetActiveNextFrame
         m_Mode: 6
@@ -184,7 +184,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 3548454430631855132}
-        m_TargetAssemblyTypeName: Bardent.ProjectileSystem.Components.ProjectileComponent,
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileComponent,
           Assembly-CSharp
         m_MethodName: SetActiveNextFrame
         m_Mode: 6
@@ -197,7 +197,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 7473774155926503612}
-        m_TargetAssemblyTypeName: Bardent.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
+        m_TargetAssemblyTypeName: DucAnh.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
         m_MethodName: ReturnItem
         m_Mode: 4
         m_Arguments:
@@ -212,7 +212,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1775009464070235437}
-        m_TargetAssemblyTypeName: Bardent.ProjectileSystem.Components.ProjectileComponent,
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileComponent,
           Assembly-CSharp
         m_MethodName: SetActive
         m_Mode: 6
@@ -245,7 +245,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7473774155926503612}
-        m_TargetAssemblyTypeName: Bardent.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
+        m_TargetAssemblyTypeName: DucAnh.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
         m_MethodName: ReturnItem
         m_Mode: 4
         m_Arguments:
@@ -417,3 +417,4 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+

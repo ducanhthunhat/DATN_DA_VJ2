@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class Death : CoreComponent
     {

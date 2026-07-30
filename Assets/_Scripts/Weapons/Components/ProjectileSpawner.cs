@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using Bardent.ObjectPoolSystem;
-using Bardent.ProjectileSystem;
+using DucAnh.ObjectPoolSystem;
+using DucAnh.ProjectileSystem;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class ProjectileSpawner : WeaponComponent<ProjectileSpawnerData, AttackProjectileSpawner>
     {

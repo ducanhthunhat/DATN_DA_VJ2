@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Projectiles
+namespace DucAnh.Projectiles
 {
     public class Projectile : MonoBehaviour
     {
@@ -95,3 +95,4 @@ namespace Bardent.Projectiles
         }
     }
 }
+

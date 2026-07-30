@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /// <summary>
     /// The Movement projectile component is responsible for applying a velocity to the projectile. The velocity can be applied only once upon the projectile

@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Bardent.Weapons.Components;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     [CreateAssetMenu(fileName = "newWeaponData", menuName = "Data/Weapon Data/Basic Weapon Data", order = 0)]
     public class WeaponDataSO : ScriptableObject

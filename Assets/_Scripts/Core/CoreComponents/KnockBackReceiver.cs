@@ -1,9 +1,9 @@
-﻿using Bardent.Combat.KnockBack;
-using Bardent.ModifierSystem;
+using DucAnh.Combat.KnockBack;
+using DucAnh.ModifierSystem;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class KnockBackReceiver : CoreComponent, IKnockBackable
     {

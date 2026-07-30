@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Linq;
-using Bardent.Weapons.Components;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class WeaponSprite : WeaponComponent<WeaponSpriteData, AttackSprites>
     {

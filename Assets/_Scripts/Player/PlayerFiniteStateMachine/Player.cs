@@ -1,9 +1,9 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using Bardent.CoreSystem;
-using Bardent.FSM;
-using Bardent.Weapons;
+using DucAnh.CoreSystem;
+using DucAnh.FSM;
+using DucAnh.Weapons;
 using UnityEngine;
 using UnityEngine.Rendering;
 
@@ -149,3 +149,4 @@ public class Player : MonoBehaviour
    
     #endregion
 }
+

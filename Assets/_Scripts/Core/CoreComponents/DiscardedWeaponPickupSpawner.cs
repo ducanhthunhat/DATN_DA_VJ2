@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.Interaction.Interactables;
-using Bardent.Weapons;
+using System;
+using DucAnh.Interaction.Interactables;
+using DucAnh.Weapons;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class DiscardedWeaponPickupSpawner : CoreComponent
     {

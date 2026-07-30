@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
 public class Entity : MonoBehaviour {
@@ -108,3 +108,4 @@ public class Entity : MonoBehaviour {
 		}
 	}
 }
+

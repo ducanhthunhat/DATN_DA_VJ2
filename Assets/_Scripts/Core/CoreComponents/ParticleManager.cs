@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class ParticleManager : CoreComponent
     {
@@ -56,3 +56,4 @@ namespace Bardent.CoreSystem
 
     }
 }
+

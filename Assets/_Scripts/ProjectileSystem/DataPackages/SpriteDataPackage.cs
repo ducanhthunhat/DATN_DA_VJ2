@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem.DataPackages
+namespace DucAnh.ProjectileSystem.DataPackages
 {
     [Serializable]
     public class SpriteDataPackage : ProjectileDataPackage

@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.CoreSystem.StatsSystem
+namespace DucAnh.CoreSystem.StatsSystem
 {
     [Serializable]
     public class Stat

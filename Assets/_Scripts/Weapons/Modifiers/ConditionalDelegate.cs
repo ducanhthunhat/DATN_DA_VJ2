@@ -1,7 +1,7 @@
-﻿using Bardent.Weapons.Components;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons.Modifiers
+namespace DucAnh.Weapons.Modifiers
 {
     public delegate bool ConditionalDelegate(Transform source, out DirectionalInformation directionalInformation);
 }

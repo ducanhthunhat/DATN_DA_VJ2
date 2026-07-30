@@ -1,8 +1,8 @@
-﻿using Bardent.Combat.Damage;
+using DucAnh.Combat.Damage;
 using UnityEngine;
-using static Bardent.Utilities.CombatDamageUtilities; //(2)
+using static DucAnh.Utilities.CombatDamageUtilities; //(2)
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class DamageOnHitBoxAction : WeaponComponent<DamageOnHitBoxActionData, AttackDamage>
     {
@@ -11,7 +11,7 @@ namespace Bardent.Weapons.Components
         private void HandleDetectCollider2D(Collider2D[] colliders)
         {
             // Notice that this is equal to (1), the logic has just been offloaded to a static helper class. Notice the using statement (2) is static, allowing as to call the Damage function directly instead of saying
-            // Bardent.Utilities.CombatUtilities.Damage(...);
+            // DucAnh.Utilities.CombatUtilities.Damage(...);
             TryDamage(colliders, new DamageData(currentAttackData.Amount, Core.Root), out _); 
             
             //(1)

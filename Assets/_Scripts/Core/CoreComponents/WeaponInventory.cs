@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.Weapons;
+using System;
+using DucAnh.Weapons;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class WeaponInventory : CoreComponent
     {

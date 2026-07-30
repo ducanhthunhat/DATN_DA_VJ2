@@ -1,7 +1,7 @@
-﻿using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
-namespace Bardent.FSM
+namespace DucAnh.FSM
 {
     public class PlayerStunState : PlayerState
     {

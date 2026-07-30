@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
-using Bardent.Combat.Parry;
-using Bardent.Utilities;
+using System.Collections.Generic;
+using DucAnh.Combat.Parry;
+using DucAnh.Utilities;
 using UnityEngine;
 
-namespace Bardent.Combat.KnockBack
+namespace DucAnh.Combat.KnockBack
 {
     public static class CombatKnockBackUtilities
     {

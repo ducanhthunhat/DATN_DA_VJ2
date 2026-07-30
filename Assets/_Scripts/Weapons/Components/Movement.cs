@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.Weapons.Components;
+using System;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class Movement : WeaponComponent<MovementData, AttackMovement>
     {

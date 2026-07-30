@@ -1,4 +1,4 @@
-﻿namespace Bardent.Combat.Parry
+namespace DucAnh.Combat.Parry
 {
     public interface IParryable
     {

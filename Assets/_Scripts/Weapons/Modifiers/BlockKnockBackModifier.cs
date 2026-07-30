@@ -1,7 +1,7 @@
-﻿using Bardent.Combat.KnockBack;
-using Bardent.ModifierSystem;
+using DucAnh.Combat.KnockBack;
+using DucAnh.ModifierSystem;
 
-namespace Bardent.Weapons.Modifiers
+namespace DucAnh.Weapons.Modifiers
 {
     public class BlockKnockBackModifier : Modifier<KnockBackData>
     {

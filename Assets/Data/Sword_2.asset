@@ -30,7 +30,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2516071312619208705
-      type: {class: KnockBackData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: KnockBackData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: KnockBackData
         repeatData: 0
@@ -42,7 +42,7 @@ MonoBehaviour:
           <Angle>k__BackingField: {x: 1, y: 1}
           <Strength>k__BackingField: 15
     - rid: 2516071382426845185
-      type: {class: PoiseDamageData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: PoiseDamageData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: PoiseDamageData
         repeatData: 0
@@ -52,7 +52,7 @@ MonoBehaviour:
         - name: Attack 2
           <Amount>k__BackingField: 20
     - rid: 3124257199506325505
-      type: {class: DamageOnHitBoxActionData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: DamageOnHitBoxActionData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DamageOnHitBoxActionData
         repeatData: 0
@@ -62,7 +62,7 @@ MonoBehaviour:
         - name: Attack 2
           <Amount>k__BackingField: 10
     - rid: 4372344435206258689
-      type: {class: MovementData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: MovementData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: MovementData
         repeatData: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
           <Direction>k__BackingField: {x: 1, y: 0}
           <Velocity>k__BackingField: 4
     - rid: 4372345045472247810
-      type: {class: ActionHitBoxData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: ActionHitBoxData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: ActionHitBoxData
         repeatData: 0
@@ -99,7 +99,7 @@ MonoBehaviour:
           serializedVersion: 2
           m_Bits: 512
     - rid: 5662276240811753473
-      type: {class: WeaponSpriteData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: WeaponSpriteData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: WeaponSpriteData
         repeatData: 0
@@ -122,3 +122,4 @@ MonoBehaviour:
             - {fileID: 1645220379, guid: 3f6ae8b3fa4b36e48b63b3edc225fda0, type: 3}
             - {fileID: -837185620, guid: 3f6ae8b3fa4b36e48b63b3edc225fda0, type: 3}
             - {fileID: 1231312736, guid: 3f6ae8b3fa4b36e48b63b3edc225fda0, type: 3}
+

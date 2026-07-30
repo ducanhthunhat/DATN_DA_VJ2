@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.Utilities;
+using System;
+using DucAnh.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /// <summary>
     /// This class is a generic HitBox used by projectiles. The HitBox shape itself is defined by a Rect and it uses BoxCastAll to

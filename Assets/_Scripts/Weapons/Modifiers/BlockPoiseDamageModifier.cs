@@ -1,7 +1,7 @@
-﻿using Bardent.Combat.PoiseDamage;
-using Bardent.ModifierSystem;
+using DucAnh.Combat.PoiseDamage;
+using DucAnh.ModifierSystem;
 
-namespace Bardent.Weapons.Modifiers
+namespace DucAnh.Weapons.Modifiers
 {
     public class BlockPoiseDamageModifier : Modifier<PoiseDamageData>
     {

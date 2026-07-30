@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.CoreSystem;
-using Bardent.Weapons;
+using System;
+using DucAnh.CoreSystem;
+using DucAnh.Weapons;
 using UnityEngine;
 
-namespace Bardent.UI
+namespace DucAnh.UI
 {
     public class WeaponSwapUI : MonoBehaviour
     {

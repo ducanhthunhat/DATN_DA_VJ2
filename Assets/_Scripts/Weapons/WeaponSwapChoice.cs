@@ -1,6 +1,6 @@
-﻿using System;
+using System;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     public class WeaponSwapChoiceRequest
     {

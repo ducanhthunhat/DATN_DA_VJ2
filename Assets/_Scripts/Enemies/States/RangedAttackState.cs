@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.Projectiles;
+using DucAnh.Projectiles;
 using UnityEngine;
 
 public class RangedAttackState : AttackState
@@ -54,3 +54,4 @@ public class RangedAttackState : AttackState
         projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
     }
 }
+

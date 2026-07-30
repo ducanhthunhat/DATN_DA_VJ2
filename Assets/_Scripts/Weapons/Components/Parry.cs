@@ -1,11 +1,11 @@
-﻿using System;
-using Bardent.CoreSystem;
-using Bardent.Utilities;
-using Bardent.Weapons.Modifiers;
+using System;
+using DucAnh.CoreSystem;
+using DucAnh.Utilities;
+using DucAnh.Weapons.Modifiers;
 using UnityEngine;
-using static Bardent.Combat.Parry.CombatParryUtilities;
+using static DucAnh.Combat.Parry.CombatParryUtilities;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     /*
      * Parry works essentially the same as the Block weapon component. It passes modifiers to the various

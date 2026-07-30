@@ -1,9 +1,9 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using System.Linq;
-using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class Core : MonoBehaviour
     {

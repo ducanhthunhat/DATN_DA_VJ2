@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.ProjectileSystem.DataPackages;
+using System;
+using DucAnh.ProjectileSystem.DataPackages;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem
+namespace DucAnh.ProjectileSystem
 {
     /// <summary>
     /// This class is the interface between projectile components and any entity that spawns a projectile.

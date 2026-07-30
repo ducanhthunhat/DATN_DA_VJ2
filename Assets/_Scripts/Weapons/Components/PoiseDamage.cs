@@ -1,8 +1,8 @@
-﻿using Bardent.Combat.PoiseDamage;
-using Bardent.Interfaces;
+using DucAnh.Combat.PoiseDamage;
+using DucAnh.Interfaces;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class PoiseDamage : WeaponComponent<PoiseDamageData, AttackPoiseDamage>
     {

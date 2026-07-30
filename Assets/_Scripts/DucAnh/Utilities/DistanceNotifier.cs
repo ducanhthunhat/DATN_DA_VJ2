@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     /// <summary>
     /// Distance notifier takes in a starting position and a desired distance from that position. When an object

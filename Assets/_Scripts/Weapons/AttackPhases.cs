@@ -1,4 +1,4 @@
-﻿namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     public enum AttackPhases
     {

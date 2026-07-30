@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class KnockBack : WeaponComponent<KnockBackData, AttackKnockBack>
     {

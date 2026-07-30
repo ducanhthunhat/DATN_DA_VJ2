@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.Weapons;
+using System;
+using DucAnh.Weapons;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-namespace Bardent.Interaction.Interactables
+namespace DucAnh.Interaction.Interactables
 {
     [RequireComponent(typeof(Rigidbody2D))]
     public class WeaponPickup : MonoBehaviour, IInteractable<WeaponDataSO>

@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent
+namespace DucAnh
 {
     public class Bobber : MonoBehaviour
     {

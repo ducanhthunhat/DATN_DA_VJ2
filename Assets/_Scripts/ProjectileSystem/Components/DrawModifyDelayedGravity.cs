@@ -1,6 +1,6 @@
-﻿using Bardent.ProjectileSystem.DataPackages;
+using DucAnh.ProjectileSystem.DataPackages;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /*
      * This component is responsible for passing information from the DrawModifierDataPackage to the DelayedGravity component.

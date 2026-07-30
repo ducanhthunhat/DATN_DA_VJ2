@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
 public class IdleState : State {
@@ -65,3 +65,4 @@ public class IdleState : State {
 		idleTime = Random.Range(stateData.minIdleTime, stateData.maxIdleTime);
 	}
 }
+

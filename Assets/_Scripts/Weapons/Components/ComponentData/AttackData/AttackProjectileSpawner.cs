@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.ProjectileSystem;
-using Bardent.ProjectileSystem.DataPackages;
+using System;
+using DucAnh.ProjectileSystem;
+using DucAnh.ProjectileSystem.DataPackages;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     [Serializable]
     public class AttackProjectileSpawner : AttackData

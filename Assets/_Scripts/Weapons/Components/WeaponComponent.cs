@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.CoreSystem;
+using System;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public abstract class WeaponComponent : MonoBehaviour
     {

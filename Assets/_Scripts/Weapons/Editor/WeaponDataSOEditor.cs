@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Bardent.Weapons.Components;
+using DucAnh.Weapons.Components;
 using UnityEditor;
 using UnityEditor.Callbacks;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     [CustomEditor(typeof(WeaponDataSO))]
     public class WeaponDataSOEditor : Editor

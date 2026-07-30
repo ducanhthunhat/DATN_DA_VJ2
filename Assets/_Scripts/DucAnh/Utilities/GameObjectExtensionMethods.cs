@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     public static class GameObjectExtensionMethods
     {

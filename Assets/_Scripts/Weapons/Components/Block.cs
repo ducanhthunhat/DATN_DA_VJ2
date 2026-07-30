@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.CoreSystem;
-using Bardent.Utilities;
-using Bardent.Weapons.Modifiers;
+using System;
+using DucAnh.CoreSystem;
+using DucAnh.Utilities;
+using DucAnh.Weapons.Modifiers;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class Block : WeaponComponent<BlockData, AttackBlock>
     {

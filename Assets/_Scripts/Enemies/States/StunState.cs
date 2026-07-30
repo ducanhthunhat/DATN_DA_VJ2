@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.CoreSystem;
+using DucAnh.CoreSystem;
 using UnityEngine;
 
 public class StunState : State {
@@ -59,3 +59,4 @@ public class StunState : State {
 		base.PhysicsUpdate();
 	}
 }
+

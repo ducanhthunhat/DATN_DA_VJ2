@@ -1,9 +1,9 @@
-﻿using Bardent.Weapons;
+using DucAnh.Weapons;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Bardent.UI
+namespace DucAnh.UI
 {
     public class WeaponInfoUI : MonoBehaviour
     {

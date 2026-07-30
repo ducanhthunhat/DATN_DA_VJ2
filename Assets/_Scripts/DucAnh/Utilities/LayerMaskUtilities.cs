@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     /// <summary>
     /// This class holds some useful functions pertaining to LayerMasks

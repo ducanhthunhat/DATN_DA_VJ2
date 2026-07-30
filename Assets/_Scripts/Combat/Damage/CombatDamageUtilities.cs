@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Bardent.Combat.Damage;
+using System.Collections.Generic;
+using DucAnh.Combat.Damage;
 using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     /*
      * This Utility class provides some static functions for logic we might perform in many different places. This way

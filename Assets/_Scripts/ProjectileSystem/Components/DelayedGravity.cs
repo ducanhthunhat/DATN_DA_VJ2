@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.Utilities;
+using System;
+using DucAnh.Utilities;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /// <summary>
     /// DelayedGravity sets the projectiles initial gravity to zero and then sets it to some value after some distance has been travelled.

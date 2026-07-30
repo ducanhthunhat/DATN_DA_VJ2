@@ -1,6 +1,6 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
-using Bardent.Combat.Damage;
+using DucAnh.Combat.Damage;
 using UnityEngine;
 
 public class CombatTestDummy : MonoBehaviour, IDamageable
@@ -23,3 +23,4 @@ public class CombatTestDummy : MonoBehaviour, IDamageable
         anim = GetComponent<Animator>();
     }
 }
+

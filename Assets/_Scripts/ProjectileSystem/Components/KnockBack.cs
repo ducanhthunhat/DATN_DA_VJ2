@@ -1,10 +1,10 @@
-﻿using Bardent.Combat.KnockBack;
-using Bardent.ProjectileSystem.DataPackages;
-using Bardent.Utilities;
+using DucAnh.Combat.KnockBack;
+using DucAnh.ProjectileSystem.DataPackages;
+using DucAnh.Utilities;
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace Bardent.ProjectileSystem.Components
+namespace DucAnh.ProjectileSystem.Components
 {
     /*
      * The KnockBack component is responsible for using information provided by the HitBox component via an event

@@ -131,7 +131,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 7473774155926503612}
-        m_TargetAssemblyTypeName: Bardent.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
+        m_TargetAssemblyTypeName: DucAnh.ObjectPoolSystem.ObjectPoolItem, Assembly-CSharp
         m_MethodName: ReturnItem
         m_Mode: 4
         m_Arguments:
@@ -146,7 +146,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 8401562977852072779}
-        m_TargetAssemblyTypeName: Bardent.ProjectileSystem.Components.ProjectileParticles,
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileParticles,
           Assembly-CSharp
         m_MethodName: SpawnImpactParticles
         m_Mode: 0
@@ -411,3 +411,4 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6678075423308437832}
   m_PrefabAsset: {fileID: 0}
+

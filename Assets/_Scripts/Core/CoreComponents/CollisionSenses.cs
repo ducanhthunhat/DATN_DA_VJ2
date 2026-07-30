@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
 	public class CollisionSenses : CoreComponent {
 
@@ -73,3 +73,4 @@ namespace Bardent.CoreSystem
 		}
 	}
 }
+

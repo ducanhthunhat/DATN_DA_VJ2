@@ -1,8 +1,8 @@
-﻿using System;
-using Bardent.CoreSystem.StatsSystem;
+using System;
+using DucAnh.CoreSystem.StatsSystem;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class Stats : CoreComponent
     {
@@ -28,3 +28,4 @@ namespace Bardent.CoreSystem
         }
     }
 }
+

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Combat.PoiseDamage
+namespace DucAnh.Combat.PoiseDamage
 {
     public class PoiseDamageData
     {

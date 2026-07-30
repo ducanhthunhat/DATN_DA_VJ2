@@ -32,7 +32,7 @@ MonoBehaviour:
     version: 2
     RefIds:
     - rid: 2279019370723147776
-      type: {class: BlockData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: BlockData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: BlockData
         repeatData: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
             type: 3}
           <ParticlesOffset>k__BackingField: {x: 0.5, y: 0}
     - rid: 3076622070731767808
-      type: {class: OptionalSpriteData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: OptionalSpriteData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: OptionalSpriteData
         repeatData: 1
@@ -59,7 +59,7 @@ MonoBehaviour:
           <Sprite>k__BackingField: {fileID: 469599486, guid: cbcf3bd84a6c0724dbbb289ce667cbc3,
             type: 3}
     - rid: 3076622070731767809
-      type: {class: DrawData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: DrawData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DrawData
         repeatData: 1
@@ -91,11 +91,11 @@ MonoBehaviour:
             m_RotationOrder: 4
           <DrawTime>k__BackingField: 0.26666668
     - rid: 3076622070731767810
-      type: {class: DrawToProjectileData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: DrawToProjectileData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: DrawToProjectileData
     - rid: 6785867263041863682
-      type: {class: WeaponSpriteData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: WeaponSpriteData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: WeaponSpriteData
         repeatData: 1
@@ -116,11 +116,11 @@ MonoBehaviour:
             - {fileID: 460254180, guid: 5e364b25ffb340a4ea9686c9e7445968, type: 3}
             - {fileID: -1604519435, guid: 5e364b25ffb340a4ea9686c9e7445968, type: 3}
     - rid: 6785867404348227586
-      type: {class: InputHoldData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: InputHoldData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: InputHoldData
     - rid: 6827812331027955712
-      type: {class: ProjectileSpawnerData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: ProjectileSpawnerData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: ProjectileSpawnerData
         repeatData: 0
@@ -142,7 +142,7 @@ MonoBehaviour:
               <Sprite>k__BackingField: {fileID: 469599486, guid: cbcf3bd84a6c0724dbbb289ce667cbc3,
                 type: 3}
     - rid: 6827812331027955713
-      type: {class: MovementData, ns: Bardent.Weapons.Components, asm: Assembly-CSharp}
+      type: {class: MovementData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: MovementData
         repeatData: 1
@@ -150,3 +150,4 @@ MonoBehaviour:
         - name: Attack 1
           <Direction>k__BackingField: {x: 0, y: 0}
           <Velocity>k__BackingField: 0
+

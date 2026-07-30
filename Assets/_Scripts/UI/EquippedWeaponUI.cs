@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.CoreSystem;
-using Bardent.Weapons;
+using System;
+using DucAnh.CoreSystem;
+using DucAnh.Weapons;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Bardent.UI
+namespace DucAnh.UI
 {
     public class EquippedWeaponUI : MonoBehaviour
     {

@@ -1,8 +1,8 @@
-﻿using Bardent.Combat.Damage;
+using DucAnh.Combat.Damage;
 using UnityEngine;
-using static Bardent.Utilities.CombatDamageUtilities;
+using static DucAnh.Utilities.CombatDamageUtilities;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class DamageOnParry : WeaponComponent<DamageOnParryData, AttackDamage>
     {

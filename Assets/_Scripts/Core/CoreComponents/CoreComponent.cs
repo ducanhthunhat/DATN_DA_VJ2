@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class CoreComponent : MonoBehaviour, ILogicUpdate
     {
@@ -18,3 +18,4 @@ namespace Bardent.CoreSystem
 
     }
 }
+

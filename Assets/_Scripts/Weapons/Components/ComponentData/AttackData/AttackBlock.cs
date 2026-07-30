@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     /*
      * The data for a single block attack. Blocking works by checking the angle of an incoming attack and comparing that to an array

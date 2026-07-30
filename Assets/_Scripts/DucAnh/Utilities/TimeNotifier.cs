@@ -1,7 +1,7 @@
-﻿using System;
+using System;
 using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
     /*
      * TimeNotifier fires off an event after some duration once the timer has started. The timer can also be configured

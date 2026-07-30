@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Combat.Parry
+namespace DucAnh.Combat.Parry
 {
     public class ParryData
     {

@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Combat.Damage
+namespace DucAnh.Combat.Damage
 {
     /*
      * The DamageData class holds information we want to pass through the IDamageable interface.

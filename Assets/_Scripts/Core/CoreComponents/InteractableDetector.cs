@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
-using Bardent.Interaction;
-using Bardent.Utilities;
+using DucAnh.Interaction;
+using DucAnh.Utilities;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     [RequireComponent(typeof(Collider2D))]
     public class InteractableDetector : CoreComponent

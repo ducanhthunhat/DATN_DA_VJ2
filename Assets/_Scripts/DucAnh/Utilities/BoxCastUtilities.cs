@@ -1,8 +1,8 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Utilities
+namespace DucAnh.Utilities
 {
-    // NOTE FROM BARDENT: I found this code online here: https://gist.github.com/SolidAlloy/1f87fe7e529a64ba5dc31d0cc82d9a25
+    // NOTE FROM DucAnh: I found this code online here: https://gist.github.com/SolidAlloy/1f87fe7e529a64ba5dc31d0cc82d9a25
     // It helped me debug the boxcast used in the projectile HitBox
     
     /// <summary>

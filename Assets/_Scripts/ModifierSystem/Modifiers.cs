@@ -1,6 +1,6 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 
-namespace Bardent.ModifierSystem
+namespace DucAnh.ModifierSystem
 {
     /*
      * The Modifiers class is a generic class for holding and acting upon a list of Modifiers of a specific type. It also allows us to

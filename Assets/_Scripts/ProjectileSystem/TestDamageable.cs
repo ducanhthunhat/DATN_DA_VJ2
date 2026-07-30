@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.Combat.Damage;
-using Bardent.ProjectileSystem.Components;
+using System;
+using DucAnh.Combat.Damage;
+using DucAnh.ProjectileSystem.Components;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem
+namespace DucAnh.ProjectileSystem
 {
     /*
      * This MonoBehaviour is simply used to print the damage amount received in the ProjectileTestScene

@@ -1,11 +1,11 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Bardent.CoreSystem;
-using Bardent.Weapons.Components;
+using DucAnh.CoreSystem;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     public class WeaponGenerator : MonoBehaviour
     {

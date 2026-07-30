@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Bardent.Interfaces;
+using System.Collections.Generic;
+using DucAnh.Interfaces;
 using UnityEngine;
 
-namespace Bardent.ObjectPoolSystem
+namespace DucAnh.ObjectPoolSystem
 {
     /*
      * Abstract definition of the generic object pool class. It allows us to call the Release function without having to know

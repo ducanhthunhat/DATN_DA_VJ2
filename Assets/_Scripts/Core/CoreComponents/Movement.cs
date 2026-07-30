@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class Movement : CoreComponent
     {
@@ -95,3 +95,4 @@ namespace Bardent.CoreSystem
         #endregion
     }
 }
+

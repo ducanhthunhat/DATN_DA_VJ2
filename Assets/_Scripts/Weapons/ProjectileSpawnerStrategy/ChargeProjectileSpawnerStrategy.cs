@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.ObjectPoolSystem;
-using Bardent.ProjectileSystem;
-using Bardent.Weapons.Components;
+using System;
+using DucAnh.ObjectPoolSystem;
+using DucAnh.ProjectileSystem;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     /*
      * This class represents a custom strategy used to spawn projectiles. Out ProjectileSpawner weapon component makes use of a strategy when it wants to spawn

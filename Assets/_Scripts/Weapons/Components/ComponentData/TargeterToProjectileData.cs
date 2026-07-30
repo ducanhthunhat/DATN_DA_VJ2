@@ -1,4 +1,4 @@
-﻿namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class TargeterToProjectileData : ComponentData
     {

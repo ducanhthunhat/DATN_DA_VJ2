@@ -1,8 +1,8 @@
-﻿using UnityEngine;
-using static Bardent.Combat.KnockBack.CombatKnockBackUtilities;
+using UnityEngine;
+using static DucAnh.Combat.KnockBack.CombatKnockBackUtilities;
 
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     public class KnockBackOnParry : WeaponComponent<KnockBackOnParryData, AttackKnockBack>
     {

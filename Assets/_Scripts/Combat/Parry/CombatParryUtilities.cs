@@ -1,8 +1,8 @@
-﻿using System.Collections.Generic;
-using Bardent.Utilities;
+using System.Collections.Generic;
+using DucAnh.Utilities;
 using UnityEngine;
 
-namespace Bardent.Combat.Parry
+namespace DucAnh.Combat.Parry
 {
     public static class CombatParryUtilities
     {

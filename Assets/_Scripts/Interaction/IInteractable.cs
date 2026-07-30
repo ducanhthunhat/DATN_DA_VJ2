@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Interaction
+namespace DucAnh.Interaction
 {
     public interface IInteractable
     {

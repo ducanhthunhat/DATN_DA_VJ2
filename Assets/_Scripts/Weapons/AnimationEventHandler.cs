@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     public class AnimationEventHandler : MonoBehaviour
     {

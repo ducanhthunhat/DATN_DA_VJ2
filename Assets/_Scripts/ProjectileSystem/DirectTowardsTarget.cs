@@ -1,12 +1,12 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using Bardent.ProjectileSystem.Components;
-using Bardent.ProjectileSystem.DataPackages;
-using Bardent.Utilities;
+using DucAnh.ProjectileSystem.Components;
+using DucAnh.ProjectileSystem.DataPackages;
+using DucAnh.Utilities;
 using UnityEngine;
 
-namespace Bardent.ProjectileSystem
+namespace DucAnh.ProjectileSystem
 {
     /*
      * This component is responsible for rotating a projectile such that it points in the direction of a target. The projectile is provided with a list of targets

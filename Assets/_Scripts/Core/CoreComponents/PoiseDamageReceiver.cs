@@ -1,7 +1,7 @@
-﻿using Bardent.Combat.PoiseDamage;
- using Bardent.ModifierSystem;
+using DucAnh.Combat.PoiseDamage;
+ using DucAnh.ModifierSystem;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class PoiseDamageReceiver : CoreComponent, IPoiseDamageable
     {

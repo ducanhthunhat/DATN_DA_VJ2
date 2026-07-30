@@ -1,6 +1,6 @@
-﻿using UnityEngine;
+using UnityEngine;
 
-namespace Bardent.Combat.KnockBack
+namespace DucAnh.Combat.KnockBack
 {
     public class KnockBackData
     {

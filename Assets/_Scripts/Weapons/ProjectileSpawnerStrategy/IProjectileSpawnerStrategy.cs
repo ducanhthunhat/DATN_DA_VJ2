@@ -1,10 +1,10 @@
-﻿using System;
-using Bardent.ObjectPoolSystem;
-using Bardent.ProjectileSystem;
-using Bardent.Weapons.Components;
+using System;
+using DucAnh.ObjectPoolSystem;
+using DucAnh.ProjectileSystem;
+using DucAnh.Weapons.Components;
 using UnityEngine;
 
-namespace Bardent.Weapons
+namespace DucAnh.Weapons
 {
     /*
      * The ProjectileSpawnerStrategy interface. We have a single function that takes in the ProjectileSpawnInfo, the position of the spawner, the facingDirection of the spawner,

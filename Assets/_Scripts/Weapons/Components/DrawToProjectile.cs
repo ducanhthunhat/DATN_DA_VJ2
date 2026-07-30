@@ -1,7 +1,7 @@
-﻿using Bardent.ProjectileSystem;
-using Bardent.ProjectileSystem.DataPackages;
+using DucAnh.ProjectileSystem;
+using DucAnh.ProjectileSystem.DataPackages;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     /*
      * This component works with both the Draw and ProjectileSpawner components. It listens for the evaluation event from Draw and the projectile spawned event from the projectile spawner.

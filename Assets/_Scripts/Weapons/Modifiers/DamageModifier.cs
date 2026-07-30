@@ -1,12 +1,12 @@
-﻿using System;
-using Bardent.ModifierSystem;
-using Bardent.Utilities;
-using Bardent.Weapons.Components;
+using System;
+using DucAnh.ModifierSystem;
+using DucAnh.Utilities;
+using DucAnh.Weapons.Components;
 using UnityEngine;
-using DamageData = Bardent.Combat.Damage.DamageData;
-using Movement = Bardent.CoreSystem.Movement;
+using DamageData = DucAnh.Combat.Damage.DamageData;
+using Movement = DucAnh.CoreSystem.Movement;
 
-namespace Bardent.Weapons.Modifiers
+namespace DucAnh.Weapons.Modifiers
 {
     /*
      * The modifier used by the Block weapon component to block incoming damage by modifying the damage amount.

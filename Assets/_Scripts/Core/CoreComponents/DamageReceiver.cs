@@ -1,8 +1,8 @@
-﻿using Bardent.Combat.Damage;
-using Bardent.ModifierSystem;
+using DucAnh.Combat.Damage;
+using DucAnh.ModifierSystem;
 using UnityEngine;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class DamageReceiver : CoreComponent, IDamageable
     {

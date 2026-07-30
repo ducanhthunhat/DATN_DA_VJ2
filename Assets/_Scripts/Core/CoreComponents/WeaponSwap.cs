@@ -1,9 +1,9 @@
-﻿using System;
-using Bardent.Interaction;
-using Bardent.Interaction.Interactables;
-using Bardent.Weapons;
+using System;
+using DucAnh.Interaction;
+using DucAnh.Interaction.Interactables;
+using DucAnh.Weapons;
 
-namespace Bardent.CoreSystem
+namespace DucAnh.CoreSystem
 {
     public class WeaponSwap : CoreComponent
     {

@@ -1,4 +1,4 @@
-﻿namespace Bardent.ProjectileSystem.DataPackages
+namespace DucAnh.ProjectileSystem.DataPackages
 {
     /*
     * Projectile component data is not always set in stone on the prefab, and instead need to come from the weapon that is spawning the projectile

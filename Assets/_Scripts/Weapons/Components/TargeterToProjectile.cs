@@ -1,7 +1,7 @@
-﻿using Bardent.ProjectileSystem;
-using Bardent.ProjectileSystem.DataPackages;
+using DucAnh.ProjectileSystem;
+using DucAnh.ProjectileSystem.DataPackages;
 
-namespace Bardent.Weapons.Components
+namespace DucAnh.Weapons.Components
 {
     /*
      * When a projectile is spawned, this component gets a list of all targets from the Targeter weapon component and passes that through
