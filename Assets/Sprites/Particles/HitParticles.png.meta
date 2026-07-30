@@ -1,9 +1,21 @@
 fileFormatVersion: 2
-guid: ee34d6045d987b342b8f53bb87d73dda
+guid: 3b9eed4c8fbf293468a6c7b8b89b2731
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: -394149566237495720
+    second: HitParticles_0
+  - first:
+      213: 6043571966939568975
+    second: HitParticles_1
+  - first:
+      213: 3382208953917745935
+    second: HitParticles_2
+  - first:
+      213: 6050179118216840291
+    second: HitParticles_3
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 11
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,12 +32,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
   isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -63,9 +74,7 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 0
-  swizzle: 50462976
-  cookieLightType: 0
+  applyGammaDecoding: 1
   platformSettings:
   - serializedVersion: 3
     buildTarget: DefaultTexturePlatform
@@ -77,7 +86,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -85,12 +93,35 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
@@ -111,8 +142,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 824689a2f8849f444bec5b133b7bd129
-      internalID: -825537520
+      spriteID: cab4418baf11e84478777b641ff5ab39
+      internalID: -394149566237495720
       vertices: []
       indices: 
       edges: []
@@ -132,8 +163,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6e94b4cf98cb86d419df5805f721dedd
-      internalID: -209168227
+      spriteID: a7c01530d62143740800f029e4bb2f88
+      internalID: 6043571966939568975
       vertices: []
       indices: 
       edges: []
@@ -153,8 +184,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: a2dba98a2423bbf4d88785fc97d508cc
-      internalID: -1948278672
+      spriteID: 236e7a2c45a502249a45371856ca32d1
+      internalID: 3382208953917745935
       vertices: []
       indices: 
       edges: []
@@ -174,8 +205,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c724fd006ec12846ab2d4978bd87708
-      internalID: -1886060547
+      spriteID: 0ed70795d78b0bc43bfc8dde8a2340d6
+      internalID: 6050179118216840291
       vertices: []
       indices: 
       edges: []
@@ -191,12 +222,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      HitParticles_0: -825537520
-      HitParticles_1: -209168227
-      HitParticles_2: -1948278672
-      HitParticles_3: -1886060547
-  mipmapLimitGroupName: 
+      HitParticles_3: 6050179118216840291
+      HitParticles_1: 6043571966939568975
+      HitParticles_0: -394149566237495720
+      HitParticles_2: 3382208953917745935
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 

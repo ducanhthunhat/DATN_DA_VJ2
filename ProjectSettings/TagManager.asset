@@ -4,7 +4,6 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Ground
   - Enemy
   - ParticleContainer
   layers:
@@ -21,8 +20,8 @@ TagManager:
   - Dead
   - Player
   - Weapon
-  - 
-  - 
+  - Interactable
+  - WorldItem
   - 
   - 
   - 
@@ -44,9 +43,27 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Background
+    uniqueID: 2840594545
+    locked: 0
+  - name: Decoration
+    uniqueID: 2090695731
+    locked: 0
+  - name: InactiveProjectile
+    uniqueID: 3219722919
+    locked: 0
+  - name: Platforms
+    uniqueID: 1667960627
+    locked: 0
   - name: Enemy
-    uniqueID: 1498666435
+    uniqueID: 3615571261
     locked: 0
   - name: Player
-    uniqueID: 2695355533
+    uniqueID: 756119877
+    locked: 0
+  - name: ActiveProjectile
+    uniqueID: 205616101
+    locked: 0
+  - name: Foreground Decoration
+    uniqueID: 1796422411
     locked: 0

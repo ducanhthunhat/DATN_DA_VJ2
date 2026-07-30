@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: a4fe47ba99ed5f442a3f1842a2d236d9
+guid: 3179c16b297295440b9749aff89377e2
 TextureImporter:
   internalIDToNameTable: []
   externalObjects: {}
-  serializedVersion: 13
+  serializedVersion: 12
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -20,12 +20,11 @@ TextureImporter:
     externalNormalMap: 0
     heightScale: 0.25
     normalMapFilter: 0
-    flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
-  ignoreMipmapLimit: 0
+  ignoreMasterTextureLimit: 0
   grayScaleToAlpha: 0
   generateCubemap: 6
   cubemapConvolution: 0
@@ -64,7 +63,6 @@ TextureImporter:
   textureFormatSet: 0
   ignorePngGamma: 0
   applyGammaDecoding: 0
-  swizzle: 50462976
   cookieLightType: 0
   platformSettings:
   - serializedVersion: 3
@@ -77,7 +75,6 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 3
@@ -90,323 +87,334 @@ TextureImporter:
     crunchedCompression: 0
     allowsAlphaSplitting: 0
     overridden: 0
-    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Server
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Sword_1_0_0
+      name: Sword_1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 128
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 12707d4badfb0e0448d487d90e7d6365
-      internalID: -5085379058300286914
+      spriteID: f3897820850ccee47b6bcee0b0a803cf
+      internalID: -1780751373
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_1_0
+      name: Sword_1_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff1a67b37ed83104d86b5e4715145c50
+      internalID: 577957028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6abbf0bbb28f50940a73364221b30e64
+      internalID: -509565249
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 546ad4857a18e514b8b7a2b00d83053a
+      internalID: 680478193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a777d4067439a1c43907a3e0d9541995
+      internalID: 365328359
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_5
       rect:
         serializedVersion: 2
         x: 0
         y: 64
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 96d567260202b15419973cb77b709572
-      internalID: -2533648048669813742
+      spriteID: 4507eedb66adae24f85095929da688f3
+      internalID: 1469980136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_2_0
+      name: Sword_1_6
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac4806845d7ae5438906aa29c481b19
+      internalID: 1160239679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_7
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e036eaf6f3166c74db65726373870f29
+      internalID: -1537962721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_8
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 00ed8d11deddcae4f8b4ef59ec47ad35
+      internalID: 342834816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_9
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dabf5d0bfb56f4648a6bf5b7f0b84311
+      internalID: 683960273
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Sword_1_10
       rect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8efc87a683276ef4c952f33fe65e3114
-      internalID: 5752145027720495185
+      spriteID: c6cc0715e968d8e44b63659a52b9bdc0
+      internalID: -84422829
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_0_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 128
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e3cc413c50e118c408399677173e0b83
-      internalID: -5481809094105982875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_1_1
-      rect:
-        serializedVersion: 2
-        x: 64
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: afbe0551ab6dcb34eae318ac272b8ae8
-      internalID: 1661840347762619921
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_2_1
+      name: Sword_1_11
       rect:
         serializedVersion: 2
         x: 64
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4efd566527ecb69468faebabe0b7140c
-      internalID: 6649325429689280072
+      spriteID: 995b6e1757abcea48a9eed91e0ef56c4
+      internalID: -1669289994
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_0_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 128
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 153abe50a4b21a044a212d9b334bf5ea
-      internalID: -4386409311386438165
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_1_2
-      rect:
-        serializedVersion: 2
-        x: 128
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfe4c48270cad60458fcc7e40d9e52af
-      internalID: 668261383983022800
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_2_2
+      name: Sword_1_12
       rect:
         serializedVersion: 2
         x: 128
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 5416681a5171255448f010c6bf7ef6ac
-      internalID: 2180355087544564486
+      spriteID: 55e4d1c506736b9479c4f55a583f8304
+      internalID: -312529561
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_0_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 128
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f4f546370610d1149a33fefddef92aed
-      internalID: 7281889172417908651
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_1_3
-      rect:
-        serializedVersion: 2
-        x: 192
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0a3f618ab1e8ded4ba69bbd6e706b4ca
-      internalID: -5975569126880030109
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_2_3
+      name: Sword_1_13
       rect:
         serializedVersion: 2
         x: 192
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 227cd1a315a28884ab656813a8dc83cf
-      internalID: -8280868678455378180
+      spriteID: b089992f76f797647b667136cf767fa4
+      internalID: -1032906865
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Sword_1_0_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 128
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 67a950f7ba7377f4f9d6c0204c70860f
-      internalID: -916234153958539881
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_1_4
-      rect:
-        serializedVersion: 2
-        x: 256
-        y: 64
-        width: 64
-        height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1e9cb26f72a9d39469f3712cda62a7f3
-      internalID: 7377369438703260507
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Sword_1_2_4
+      name: Sword_1_14
       rect:
         serializedVersion: 2
         x: 256
         y: 0
         width: 64
         height: 64
-      alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 67b7224bae5fd604ba3ef3a677ef95c1
-      internalID: 2182140650380909831
+      spriteID: 2e841d39b0bfaf249b56d0d97123d851
+      internalID: 621078435
       vertices: []
       indices: 
       edges: []
@@ -422,23 +430,24 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     nameFileIdTable:
-      Sword_1_0_0: -5085379058300286914
-      Sword_1_0_1: -5481809094105982875
-      Sword_1_0_2: -4386409311386438165
-      Sword_1_0_3: 7281889172417908651
-      Sword_1_0_4: -916234153958539881
-      Sword_1_1_0: -2533648048669813742
-      Sword_1_1_1: 1661840347762619921
-      Sword_1_1_2: 668261383983022800
-      Sword_1_1_3: -5975569126880030109
-      Sword_1_1_4: 7377369438703260507
-      Sword_1_2_0: 5752145027720495185
-      Sword_1_2_1: 6649325429689280072
-      Sword_1_2_2: 2180355087544564486
-      Sword_1_2_3: -8280868678455378180
-      Sword_1_2_4: 2182140650380909831
-  mipmapLimitGroupName: 
+      Sword_1_13: -1032906865
+      Sword_1_10: -84422829
+      Sword_1_3: 680478193
+      Sword_1_5: 1469980136
+      Sword_1_9: 683960273
+      Sword_1_4: 365328359
+      Sword_1_12: -312529561
+      Sword_1_8: 342834816
+      Sword_1_0: -1780751373
+      Sword_1_6: 1160239679
+      Sword_1_11: -1669289994
+      Sword_1_2: -509565249
+      Sword_1_1: 577957028
+      Sword_1_7: -1537962721
+      Sword_1_14: 621078435
+  spritePackingTag: 
   pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
   userData: 
   assetBundleName: 
   assetBundleVariant: 
