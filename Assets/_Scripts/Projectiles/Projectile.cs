@@ -1,19 +1,24 @@
 using UnityEngine;
+using DucAnh.Combat.Damage;
+using DucAnh.Combat.KnockBack;
 
 namespace DucAnh.Projectiles
 {
     public class Projectile : MonoBehaviour
     {
-        //private AttackDetails attackDetails;
-
         private float speed;
         private float travelDistance;
         private float xStartPos;
+        private float damageAmount;
 
         [SerializeField]
         private float gravity;
         [SerializeField]
         private float damageRadius;
+        [SerializeField]
+        private Vector2 knockBackAngle = new Vector2(1, 1);
+        [SerializeField]
+        private float knockBackStrength = 10f;
 
         private Rigidbody2D rb;
 
@@ -43,8 +48,6 @@ namespace DucAnh.Projectiles
         {
             if (!hasHitGround)
             {
-                //attackDetails.position = transform.position;
-
                 if (isGravityOn)
                 {
                     float angle = Mathf.Atan2(rb.velocity.y, rb.velocity.x) * Mathf.Rad2Deg;
@@ -62,7 +65,19 @@ namespace DucAnh.Projectiles
 
                 if (damageHit)
                 {
-                    //damageHit.transform.SendMessage("Damage", attackDetails);
+                    IDamageable damageable = damageHit.GetComponentInChildren<IDamageable>();
+                    if (damageable != null)
+                    {
+                        damageable.Damage(new DamageData(damageAmount, gameObject));
+                    }
+
+                    IKnockBackable knockBackable = damageHit.GetComponentInChildren<IKnockBackable>();
+                    if (knockBackable != null)
+                    {
+                        int direction = rb.velocity.x > 0 ? 1 : -1;
+                        knockBackable.KnockBack(new KnockBackData(knockBackAngle, knockBackStrength, direction, gameObject));
+                    }
+
                     Destroy(gameObject);
                 }
 
@@ -72,7 +87,6 @@ namespace DucAnh.Projectiles
                     rb.gravityScale = 0f;
                     rb.velocity = Vector2.zero;
                 }
-
 
                 if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)
                 {
@@ -86,12 +100,15 @@ namespace DucAnh.Projectiles
         {
             this.speed = speed;
             this.travelDistance = travelDistance;
-            //attackDetails.damageAmount = damage;
+            this.damageAmount = damage;
         }
 
         private void OnDrawGizmos()
         {
-            Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
+            if (damagePosition != null)
+            {
+                Gizmos.DrawWireSphere(damagePosition.position, damageRadius);
+            }
         }
     }
 }
