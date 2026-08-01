@@ -17,6 +17,14 @@ namespace DucAnh.Weapons.Components
             minHoldPassed = false;
         }
 
+        protected override void HandleExit()
+        {
+            base.HandleExit();
+            
+            // Ép buộc reset biến hold về false khi vũ khí bị ngắt (ví dụ: người chơi bị choáng)
+            anim.SetBool("hold", false);
+        }
+
         private void HandleCurrentInputChange(bool newInput)
         {
             input = newInput;
