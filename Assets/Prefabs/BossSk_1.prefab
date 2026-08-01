@@ -111,6 +111,7 @@ MonoBehaviour:
   knockBackStrength: 10
   destroyOnHitGround: 0
   destroyOnHitPlayer: 1
+  ignoreGround: 1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 256

@@ -40,11 +40,14 @@ public class B1_Skill1State : AttackState
             // Nếu có đủ hết thì đẻ ra
             GameObject newSkill = GameObject.Instantiate(stateData.projectile, attackPosition.position, attackPosition.rotation);
             
-            // Kích hoạt sát thương và TỐC ĐỘ BAY cho cục bẫy/đạn
+            // Kích hoạt sát thương và TỐC ĐỘ BAY cho các bẫy/đạn
             DucAnh.Projectiles.Projectile proj = newSkill.GetComponent<DucAnh.Projectiles.Projectile>();
             if (proj != null)
             {
-                proj.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+                float damage = stateData.projectileDamage;
+                if (boss.IsPhase2()) damage *= boss.phase2DamageMultiplier;
+                
+                proj.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, damage);
             }
         }
     }

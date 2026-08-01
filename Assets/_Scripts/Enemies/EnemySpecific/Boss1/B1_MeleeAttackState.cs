@@ -20,4 +20,17 @@ public class B1_MeleeAttackState : MeleeAttackState
             stateMachine.ChangeState(boss.idleState);
         }
     }
+
+    public override void TriggerAttack()
+    {
+        float originalDamage = stateData.attackDamage;
+        if (boss.IsPhase2())
+        {
+            stateData.attackDamage *= boss.phase2DamageMultiplier;
+        }
+        
+        base.TriggerAttack();
+        
+        stateData.attackDamage = originalDamage; // Trả lại như cũ để không bị cộng dồn
+    }
 }

@@ -8,6 +8,9 @@ public class Boss1 : Entity
     public B1_Skill2State skill2State { get; private set; }
     public B1_MeleeAttackState meleeAttackState { get; private set; }
     public B1_DeadState deadState { get; private set; }
+    public B1_Phase2TransitionState phase2TransitionState { get; private set; }
+
+    public bool hasEnteredPhase2 = false;
 
     [Header("Skill Settings")]
     public float skillCooldown = 5f; // Thời gian chờ chung để tung chiêu tiếp theo
@@ -18,6 +21,7 @@ public class Boss1 : Entity
     [Header("Phase 2 Settings (< 50% HP)")]
     public float phase2SpeedMultiplier = 1.5f; // Tốc độ di chuyển tăng x1.5 lần
     public float phase2CooldownMultiplier = 0.5f; // Thời gian chờ tung chiêu giảm còn 1 nửa (đánh nhanh hơn)
+    public float phase2DamageMultiplier = 1.5f; // Sát thương nhân x1.5 lần
 
     public bool IsPhase2()
     {
@@ -53,6 +57,7 @@ public class Boss1 : Entity
         skill2State = new B1_Skill2State(this, stateMachine, "skill2", rangedAttackPosition, skill2Data, this);
         meleeAttackState = new B1_MeleeAttackState(this, stateMachine, "meleeAttack", meleeAttackPosition, meleeAttackStateData, this);
         deadState = new B1_DeadState(this, stateMachine, "dead", deadStateData, this);
+        phase2TransitionState = new B1_Phase2TransitionState(this, stateMachine, "roar", this); // Chạy animation roar khi hóa điên
     }
 
     private void Start()
@@ -61,6 +66,18 @@ public class Boss1 : Entity
         lastSkillTime = Time.time;
         
         stateMachine.Initialize(patrolState);
+    }
+
+    public override void Update()
+    {
+        base.Update();
+
+        // Kiểm tra chuyển Phase
+        if (!hasEnteredPhase2 && IsPhase2() && !isDead)
+        {
+            hasEnteredPhase2 = true;
+            stateMachine.ChangeState(phase2TransitionState);
+        }
     }
 
     public override void OnDrawGizmos()

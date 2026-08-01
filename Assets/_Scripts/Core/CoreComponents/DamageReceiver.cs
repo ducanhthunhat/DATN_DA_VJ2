@@ -19,8 +19,11 @@ namespace DucAnh.CoreSystem
         private ParticleManager particleManager;
 
 
+        [HideInInspector] public bool isInvincible = false;
+
         public void Damage(DamageData data)
         {
+            if (isInvincible) return;
             print($"Damage Amount Before Modifiers: {data.Amount}");
 
             // We must apply the modifiers before we do anything else with data. If there are no modifiers currently active, data will remain the same

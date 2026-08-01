@@ -23,6 +23,8 @@ namespace DucAnh.Projectiles
         private bool destroyOnHitGround = true; // Bật = Biến mất khi chạm đất, Tắt = Cắm chặt vào đất
         [SerializeField]
         private bool destroyOnHitPlayer = true; // Bật = Biến mất khi chạm Player, Tắt = Xuyên qua Player
+        [SerializeField]
+        private bool ignoreGround = false; // Bật = Bay xuyên qua mặt đất (Không bị cản lại)
 
         private Rigidbody2D rb;
 
@@ -96,7 +98,7 @@ namespace DucAnh.Projectiles
                     }
                 }
 
-                if (groundHit)
+                if (groundHit && !ignoreGround)
                 {
                     hasHitGround = true;
                     rb.gravityScale = 0f;

@@ -48,7 +48,10 @@ public class B1_Skill2State : RangedAttackState
             Projectile projectileScript = newProjectile.GetComponent<Projectile>();
             if (projectileScript != null)
             {
-                projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, stateData.projectileDamage);
+                float damage = stateData.projectileDamage;
+                if (boss.IsPhase2()) damage *= boss.phase2DamageMultiplier;
+
+                projectileScript.FireProjectile(stateData.projectileSpeed, stateData.projectileTravelDistance, damage);
             }
             
             currentAngle += angleStep;
