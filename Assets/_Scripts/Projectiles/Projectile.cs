@@ -19,6 +19,10 @@ namespace DucAnh.Projectiles
         private Vector2 knockBackAngle = new Vector2(1, 1);
         [SerializeField]
         private float knockBackStrength = 10f;
+        [SerializeField]
+        private bool destroyOnHitGround = true; // Bật = Biến mất khi chạm đất, Tắt = Cắm chặt vào đất
+        [SerializeField]
+        private bool destroyOnHitPlayer = true; // Bật = Biến mất khi chạm Player, Tắt = Xuyên qua Player
 
         private Rigidbody2D rb;
 
@@ -78,7 +82,18 @@ namespace DucAnh.Projectiles
                         knockBackable.KnockBack(new KnockBackData(knockBackAngle, knockBackStrength, direction, gameObject));
                     }
 
-                    Destroy(gameObject);
+                    if (destroyOnHitPlayer)
+                    {
+                        DucAnh.ObjectPoolSystem.ObjectPoolItem poolItem = GetComponent<DucAnh.ObjectPoolSystem.ObjectPoolItem>();
+                        if (poolItem != null)
+                        {
+                            poolItem.ReturnItem();
+                        }
+                        else
+                        {
+                            Destroy(gameObject);
+                        }
+                    }
                 }
 
                 if (groundHit)
@@ -86,6 +101,20 @@ namespace DucAnh.Projectiles
                     hasHitGround = true;
                     rb.gravityScale = 0f;
                     rb.velocity = Vector2.zero;
+
+                    if (destroyOnHitGround)
+                    {
+                        // Trả đạn về Pool hoặc Hủy (Destroy) đạn
+                        DucAnh.ObjectPoolSystem.ObjectPoolItem poolItem = GetComponent<DucAnh.ObjectPoolSystem.ObjectPoolItem>();
+                        if (poolItem != null)
+                        {
+                            poolItem.ReturnItem(); // Trả về pool nếu có dùng Object Pool
+                        }
+                        else
+                        {
+                            Destroy(gameObject); // Xóa thẳng nếu không dùng Pool
+                        }
+                    }
                 }
 
                 if (Mathf.Abs(xStartPos - transform.position.x) >= travelDistance && !isGravityOn)

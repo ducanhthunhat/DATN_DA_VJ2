@@ -26,7 +26,6 @@ public class Entity : MonoBehaviour {
 	[SerializeField]
 	private Transform groundCheck;
 
-	private float currentHealth;
 	private float currentStunResistance;
 	private float lastDamageTime;
 
@@ -46,7 +45,6 @@ public class Entity : MonoBehaviour {
 
 		parryReceiver.OnParried += HandleParry;
 
-		currentHealth = entityData.maxHealth;
 		currentStunResistance = entityData.stunResistance;
 
 		anim = GetComponent<Animator>();
