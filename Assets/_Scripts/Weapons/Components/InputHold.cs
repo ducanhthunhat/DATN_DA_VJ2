@@ -15,6 +15,10 @@ namespace DucAnh.Weapons.Components
             base.HandleEnter();
 
             minHoldPassed = false;
+            
+            // Đồng bộ lại input hiện tại ngay khi bắt đầu đòn đánh mới
+            input = weapon.CurrentInput;
+            SetAnimatorParameter();
         }
 
         protected override void HandleExit()

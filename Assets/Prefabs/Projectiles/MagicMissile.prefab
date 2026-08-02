@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 7709550137505407433}
   - component: {fileID: 920886189248493772}
   - component: {fileID: 8401562977852072779}
+  - component: {fileID: -3443645490876793308}
   m_Layer: 0
   m_Name: MagicMissile
   m_TagString: Untagged
@@ -34,6 +35,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775009464070235412}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -42,7 +44,6 @@ Transform:
   - {fileID: 1775009465610879454}
   - {fileID: 4886955368816051371}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!50 &1775009464070235408
 Rigidbody2D:
@@ -61,6 +62,12 @@ Rigidbody2D:
   m_AngularDrag: 0.05
   m_GravityScale: 4
   m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
@@ -252,6 +259,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   impactParticles: {fileID: 6007068065979202472, guid: ce18dae147993074e9869e36eb0ba4df,
     type: 3}
+--- !u!114 &-3443645490876793308
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1775009464070235412}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee701d331edf1a043b4bcfc135da9559, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnHit:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8401562977852072779}
+        m_TargetAssemblyTypeName: DucAnh.ProjectileSystem.Components.ProjectileParticles,
+          Assembly-CSharp
+        m_MethodName: SpawnImpactParticles
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  <LayerMask>k__BackingField:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!1 &1775009465610879425
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,13 +314,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1775009465610879425}
+  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.377, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1775009464070235413}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &1775009465610879455
 SpriteRenderer:
@@ -341,6 +379,7 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 1775009464070235413}
     m_Modifications:
     - target: {fileID: 2268897439260401120, guid: ae53de6c87441f34995e3ccb9d23b136,
@@ -404,6 +443,9 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ae53de6c87441f34995e3ccb9d23b136, type: 3}
 --- !u!4 &4886955368816051371 stripped
 Transform:
@@ -411,4 +453,3 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 6678075423308437832}
   m_PrefabAsset: {fileID: 0}
-

@@ -12,6 +12,10 @@ public class B1_Phase2TransitionState : State
     private float transitionDuration = 2f;
     private SpriteRenderer spriteRenderer;
 
+    private CinemachineBasicMultiChannelPerlin vcamPerlin;
+    private float originalAmplitude;
+    private float originalFrequency;
+
     public B1_Phase2TransitionState(Entity entity, FiniteStateMachine stateMachine, string animBoolName, Boss1 boss)
         : base(entity, stateMachine, animBoolName)
     {
@@ -46,6 +50,17 @@ public class B1_Phase2TransitionState : State
         {
             oldCamTarget = vcam.Follow;
             vcam.Follow = boss.transform; // Lia cam vào Boss
+
+            // Thêm hiệu ứng rung màn hình
+            vcamPerlin = vcam.GetCinemachineComponent<CinemachineBasicMultiChannelPerlin>();
+            if (vcamPerlin != null)
+            {
+                originalAmplitude = vcamPerlin.m_AmplitudeGain;
+                originalFrequency = vcamPerlin.m_FrequencyGain;
+                
+                vcamPerlin.m_AmplitudeGain = 5f; // Rung rất mạnh
+                vcamPerlin.m_FrequencyGain = 2f; // Tần số rung nhanh
+            }
         }
 
         GameObject player = GameObject.FindGameObjectWithTag("Player");
@@ -89,6 +104,13 @@ public class B1_Phase2TransitionState : State
         if (vcam != null && oldCamTarget != null)
         {
             vcam.Follow = oldCamTarget;
+
+            // Tắt rung màn hình
+            if (vcamPerlin != null)
+            {
+                vcamPerlin.m_AmplitudeGain = originalAmplitude;
+                vcamPerlin.m_FrequencyGain = originalFrequency;
+            }
         }
 
         if (playerInput != null)

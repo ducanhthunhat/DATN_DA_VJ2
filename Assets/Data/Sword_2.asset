@@ -26,6 +26,7 @@ MonoBehaviour:
   - rid: 3124257199506325505
   - rid: 2516071312619208705
   - rid: 2516071382426845185
+  - rid: 6195232409495273473
   references:
     version: 2
     RefIds:
@@ -123,3 +124,15 @@ MonoBehaviour:
             - {fileID: -837185620, guid: 3f6ae8b3fa4b36e48b63b3edc225fda0, type: 3}
             - {fileID: 1231312736, guid: 3f6ae8b3fa4b36e48b63b3edc225fda0, type: 3}
             - {fileID: 0}
+    - rid: 6195232409495273473
+      type: {class: HitStopOnHitBoxActionData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
+      data:
+        name: HitStopOnHitBoxActionData
+        repeatData: 0
+        attackData:
+        - name: Attack 1
+          <Duration>k__BackingField: 0
+          <TimeScale>k__BackingField: 0
+        - name: Attack 2
+          <Duration>k__BackingField: 0.1
+          <TimeScale>k__BackingField: 0.05
