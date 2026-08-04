@@ -7,6 +7,7 @@ namespace DucAnh.CoreSystem.StatsSystem
     public class Stat
     {
         public event Action OnCurrentValueZero;
+        public event Action<float, float> OnCurrentValueChanged; // Added for UI
         
         [field: SerializeField] public float MaxValue { get; private set; }
 
@@ -16,6 +17,7 @@ namespace DucAnh.CoreSystem.StatsSystem
             set
             {
                 currentValue = Mathf.Clamp(value, 0f, MaxValue);
+                OnCurrentValueChanged?.Invoke(currentValue, MaxValue);
 
                 if (currentValue <= 0f)
                 {

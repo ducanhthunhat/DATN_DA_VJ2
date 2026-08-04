@@ -10,11 +10,17 @@ namespace DucAnh.Weapons.Components
 
         private void HandleDetectCollider2D(Collider2D[] colliders)
         {
+            System.Collections.Generic.List<IPoiseDamageable> damagedTargets = new System.Collections.Generic.List<IPoiseDamageable>();
+
             foreach (var item in colliders)
             {
                 if (item.TryGetComponent(out IPoiseDamageable poiseDamageable))
                 {
-                    poiseDamageable.DamagePoise(new Combat.PoiseDamage.PoiseDamageData(currentAttackData.Amount, Core.Root));
+                    if (!damagedTargets.Contains(poiseDamageable))
+                    {
+                        poiseDamageable.DamagePoise(new Combat.PoiseDamage.PoiseDamageData(currentAttackData.Amount, Core.Root));
+                        damagedTargets.Add(poiseDamageable);
+                    }
                 }
             }
         }

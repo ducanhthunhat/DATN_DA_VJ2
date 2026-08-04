@@ -41,8 +41,15 @@ public class B1_Skill2State : RangedAttackState
             // Tính toán góc xoay
             Quaternion rotation = Quaternion.Euler(0, 0, currentAngle);
             
-            // Tạo viên đạn tại vị trí tay/ngực Boss
-            GameObject newProjectile = GameObject.Instantiate(stateData.projectile, attackPosition.position, rotation);
+            // Tự động kéo điểm đẻ đạn tụt xuống một chút nếu Boss đang ở Phase 2 (vì cơ thể bị phóng to 1.15x)
+            Vector3 spawnPos = attackPosition.position;
+            if (boss.IsPhase2()) 
+            {
+                spawnPos.y -= 0.5f; 
+            }
+
+            // Tạo viên đạn
+            GameObject newProjectile = GameObject.Instantiate(stateData.projectile, spawnPos, rotation);
             
             // Kích hoạt viên đạn bay đi
             Projectile projectileScript = newProjectile.GetComponent<Projectile>();

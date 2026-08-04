@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -32,7 +32,12 @@ public class E1_ChargeState : ChargeState
 
         if (performCloseRangeAction)
         {
-            stateMachine.ChangeState(enemy.meleeAttackState);
+            if (enemy.playerDetectedState.CanAttack()) {
+                enemy.playerDetectedState.RecordAttack();
+                stateMachine.ChangeState(enemy.meleeAttackState);
+            } else {
+                stateMachine.ChangeState(enemy.playerDetectedState);
+            }
         }
         else if (!isDetectingLedge || isDetectingWall)
         {

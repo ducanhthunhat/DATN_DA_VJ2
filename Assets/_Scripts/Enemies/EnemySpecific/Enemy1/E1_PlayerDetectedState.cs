@@ -1,9 +1,10 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class E1_PlayerDetectedState : PlayerDetectedState {
 	private Enemy1 enemy;
+	public float lastAttackTime;
 
 	public E1_PlayerDetectedState(Entity etity, FiniteStateMachine stateMachine, string animBoolName, D_PlayerDetected stateData, Enemy1 enemy) : base(etity, stateMachine, animBoolName, stateData) {
 		this.enemy = enemy;
@@ -17,10 +18,21 @@ public class E1_PlayerDetectedState : PlayerDetectedState {
 		base.Exit();
 	}
 
+	public bool CanAttack() {
+		return Time.time >= lastAttackTime + stateData.attackCooldown;
+	}
+
+	public void RecordAttack() {
+		lastAttackTime = Time.time;
+	}
+
 	public override void LogicUpdate() {
 		base.LogicUpdate();
 
-		if (performCloseRangeAction) {
+		bool canAttack = CanAttack();
+
+		if (performCloseRangeAction && canAttack) {
+			RecordAttack();
 			stateMachine.ChangeState(enemy.meleeAttackState);
 		} else if (performLongRangeAction) {
 			stateMachine.ChangeState(enemy.chargeState);

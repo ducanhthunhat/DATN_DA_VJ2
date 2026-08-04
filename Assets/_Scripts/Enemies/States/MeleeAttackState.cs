@@ -24,11 +24,14 @@ public class MeleeAttackState : AttackState {
 
 		Collider2D[] detectedObjects = Physics2D.OverlapCircleAll(attackPosition.position, stateData.attackRadius, stateData.whatIsPlayer);
 
+		List<IDamageable> damagedTargets = new List<IDamageable>();
+
 		foreach (Collider2D collider in detectedObjects) {
 			IDamageable damageable = collider.GetComponent<IDamageable>();
 
-			if (damageable != null) {
+			if (damageable != null && !damagedTargets.Contains(damageable)) {
 				damageable.Damage(new DamageData(stateData.attackDamage, core.Root));
+				damagedTargets.Add(damageable);
 			}
 
 			IKnockBackable knockBackable = collider.GetComponent<IKnockBackable>();

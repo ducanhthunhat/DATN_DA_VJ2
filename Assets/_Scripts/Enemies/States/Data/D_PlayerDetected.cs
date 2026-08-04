@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,4 +6,5 @@ using UnityEngine;
 public class D_PlayerDetected : ScriptableObject
 {
     public float longRangeActionTime = 1.5f;
+    public float attackCooldown = 1.5f;
 }
