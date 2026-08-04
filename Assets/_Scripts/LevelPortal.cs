@@ -9,25 +9,41 @@ public class LevelPortal : MonoBehaviour
     [Tooltip("Tag của nhân vật chính")]
     [SerializeField] private string playerTag = "Player";
 
+    [Header("Animation (Tùy chọn)")]
+    [Tooltip("Kéo thả Animator của cánh cửa vào đây")]
+    [SerializeField] private Animator doorAnimator;
+    [Tooltip("Tên biến Bool trong Animator để mở cửa (VD: isNear)")]
+    [SerializeField] private string isNearBoolName = "isNear";
+
     private bool isPlayerInRange = false;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (onlyPlayer && !collision.CompareTag(playerTag)) return;
         isPlayerInRange = true;
+        
+        if (doorAnimator != null && !string.IsNullOrEmpty(isNearBoolName))
+        {
+            doorAnimator.SetBool(isNearBoolName, true);
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (onlyPlayer && !collision.CompareTag(playerTag)) return;
         isPlayerInRange = false;
+
+        if (doorAnimator != null && !string.IsNullOrEmpty(isNearBoolName))
+        {
+            doorAnimator.SetBool(isNearBoolName, false);
+        }
     }
 
     private void Update()
     {
+        // Xử lý phím F để qua màn
         if (UnityEngine.InputSystem.Keyboard.current != null)
         {
-            // Khi người chơi đang đứng ở cổng và bấm phím F
             if (isPlayerInRange && UnityEngine.InputSystem.Keyboard.current.fKey.wasPressedThisFrame)
             {
                 isPlayerInRange = false; // Ngăn chặn việc bấm liên tục
