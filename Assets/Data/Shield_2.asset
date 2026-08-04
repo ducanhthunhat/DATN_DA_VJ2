@@ -145,5 +145,4 @@ MonoBehaviour:
         repeatData: 0
         attackData:
         - name: Attack 1
-          <Amount>k__BackingField: 20
-
+          <Amount>k__BackingField: 5

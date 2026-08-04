@@ -116,7 +116,7 @@ MonoBehaviour:
         repeatData: 0
         attackData:
         - name: Attack 1
-          <Amount>k__BackingField: 10
+          <Amount>k__BackingField: 5
     - rid: 1263952977246814208
       type: {class: ParryData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
@@ -156,4 +156,3 @@ MonoBehaviour:
         attackData:
         - name: Attack 1
           <Amount>k__BackingField: 5
-

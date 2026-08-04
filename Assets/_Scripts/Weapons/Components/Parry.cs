@@ -28,14 +28,14 @@ namespace DucAnh.Weapons.Components
         private ParticleManager particleManager;
 
         private bool isBlockWindowActive;
-        private bool shouldUpdate;
-
-        private float nextWindowTriggerTime;
+        private bool waitingForStart;
+        private bool waitingForEnd;
+        private float startTriggerTime;
+        private float endTriggerTime;
 
         private void StartParryWindow()
         {
             isBlockWindowActive = true;
-            shouldUpdate = false;
 
             damageModifier.OnModified += HandleParry;
 
@@ -48,9 +48,8 @@ namespace DucAnh.Weapons.Components
         private void StopParryWindow()
         {
             isBlockWindowActive = false;
-            shouldUpdate = false;
 
-            damageModifier.OnModified += HandleParry;
+            damageModifier.OnModified -= HandleParry;
 
             damageReceiver.Modifiers.RemoveModifier(damageModifier);
             knockBackReceiver.Modifiers.RemoveModifier(knockBackModifier);
@@ -97,9 +96,16 @@ namespace DucAnh.Weapons.Components
 
         private void HandleEnterAttackPhase(AttackPhases phase)
         {
-            shouldUpdate = isBlockWindowActive
-                ? currentAttackData.ParryWindowEnd.TryGetTriggerTime(phase, out nextWindowTriggerTime)
-                : currentAttackData.ParryWindowStart.TryGetTriggerTime(phase, out nextWindowTriggerTime);
+            if (currentAttackData.ParryWindowStart.TryGetTriggerTime(phase, out var startTime))
+            {
+                startTriggerTime = startTime;
+                waitingForStart = true;
+            }
+            if (currentAttackData.ParryWindowEnd.TryGetTriggerTime(phase, out var endTime))
+            {
+                endTriggerTime = endTime;
+                waitingForEnd = true;
+            }
         }
 
         #region Plumbing
@@ -124,22 +130,17 @@ namespace DucAnh.Weapons.Components
 
         private void Update()
         {
-            if (!shouldUpdate || !IsPastTriggerTime())
-                return;
-
-            if (isBlockWindowActive)
+            if (waitingForStart && Time.time >= startTriggerTime)
             {
-                StopParryWindow();
+                waitingForStart = false;
+                if (!isBlockWindowActive) StartParryWindow();
             }
-            else
-            {
-                StartParryWindow();
-            }
-        }
 
-        private bool IsPastTriggerTime()
-        {
-            return Time.time >= nextWindowTriggerTime;
+            if (waitingForEnd && Time.time >= endTriggerTime)
+            {
+                waitingForEnd = false;
+                if (isBlockWindowActive) StopParryWindow();
+            }
         }
 
         protected override void OnDestroy()

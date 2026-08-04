@@ -25,15 +25,15 @@ namespace DucAnh.Weapons.Components
         private ParticleManager particleManager;
 
         private bool isBlockWindowActive;
-        private bool shouldUpdate;
-
-        private float nextWindowTriggerTime;
+        private bool waitingForStart;
+        private bool waitingForEnd;
+        private float startTriggerTime;
+        private float endTriggerTime;
 
         // Starts the block window by passing modifiers to receivers.
         private void StartBlockWindow()
         {
             isBlockWindowActive = true;
-            shouldUpdate = false;
 
             damageModifier.OnModified += HandleModified;
 
@@ -46,13 +46,22 @@ namespace DucAnh.Weapons.Components
         private void StopBlockWindow()
         {
             isBlockWindowActive = false;
-            shouldUpdate = false;
 
             damageModifier.OnModified -= HandleModified;
 
             damageReceiver.Modifiers.RemoveModifier(damageModifier);
             knockBackReceiver.Modifiers.RemoveModifier(knockBackModifier);
             poiseDamageReceiver.Modifiers.RemoveModifier(poiseDamageModifier);
+        }
+
+        protected override void HandleExit()
+        {
+            base.HandleExit();
+
+            if (isBlockWindowActive)
+            {
+                StopBlockWindow();
+            }
         }
 
         // Checks if source falls withing any blocked regions for the current attack. Also returns the block information
@@ -80,9 +89,16 @@ namespace DucAnh.Weapons.Components
 
         private void HandleEnterAttackPhase(AttackPhases phase)
         {
-            shouldUpdate = isBlockWindowActive
-                ? currentAttackData.BlockWindowEnd.TryGetTriggerTime(phase, out nextWindowTriggerTime)
-                : currentAttackData.BlockWindowStart.TryGetTriggerTime(phase, out nextWindowTriggerTime);
+            if (currentAttackData.BlockWindowStart.TryGetTriggerTime(phase, out var startTime))
+            {
+                startTriggerTime = startTime;
+                waitingForStart = true;
+            }
+            if (currentAttackData.BlockWindowEnd.TryGetTriggerTime(phase, out var endTime))
+            {
+                endTriggerTime = endTime;
+                waitingForEnd = true;
+            }
         }
 
         #region Plumbing
@@ -108,22 +124,17 @@ namespace DucAnh.Weapons.Components
 
         private void Update()
         {
-            if (!shouldUpdate || !IsPastTriggerTime())
-                return;
-
-            if (isBlockWindowActive)
+            if (waitingForStart && Time.time >= startTriggerTime)
             {
-                StopBlockWindow();
+                waitingForStart = false;
+                if (!isBlockWindowActive) StartBlockWindow();
             }
-            else
-            {
-                StartBlockWindow();
-            }
-        }
 
-        private bool IsPastTriggerTime()
-        {
-            return Time.time >= nextWindowTriggerTime;
+            if (waitingForEnd && Time.time >= endTriggerTime)
+            {
+                waitingForEnd = false;
+                if (isBlockWindowActive) StopBlockWindow();
+            }
         }
 
         protected override void OnDestroy()
