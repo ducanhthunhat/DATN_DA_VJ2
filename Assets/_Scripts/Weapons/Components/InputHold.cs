@@ -5,10 +5,17 @@ namespace DucAnh.Weapons.Components
     public class InputHold : WeaponComponent
     {
         private Animator anim;
+        private InputHoldData data;
 
         private bool input;
 
         private bool minHoldPassed;
+
+        public override void Init()
+        {
+            base.Init();
+            data = weapon.Data.GetData<InputHoldData>();
+        }
 
         protected override void HandleEnter()
         {
@@ -49,6 +56,12 @@ namespace DucAnh.Weapons.Components
 
         private void SetAnimatorParameter()
         {
+            if (minHoldPassed && data != null && data.AutoRelease)
+            {
+                anim.SetBool("hold", false);
+                return;
+            }
+
             if (input)
             {
                 anim.SetBool("hold", input);
