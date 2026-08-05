@@ -6,7 +6,7 @@ namespace DucAnh.Weapons.Components
 {
     public class Heal : WeaponComponent
     {
-        private HealData data;
+        public HealData data { get; private set; }
         private Stats stats;
         
         public int CurrentCharges { get; private set; }
@@ -14,6 +14,8 @@ namespace DucAnh.Weapons.Components
         public event Action<int, int> OnChargesChanged;
 
         private Coroutine healCoroutine;
+        private bool minHoldPassed;
+        private bool hasStartedHealing;
 
         public override void Init()
         {
@@ -36,14 +38,27 @@ namespace DucAnh.Weapons.Components
         protected override void HandleEnter()
         {
             base.HandleEnter();
+            
+            minHoldPassed = false;
+            hasStartedHealing = false;
 
             if (CurrentCharges > 0 && stats.Health.CurrentValue < stats.Health.MaxValue)
             {
                 healCoroutine = StartCoroutine(HealGradually(data.Amount));
             }
-            else if (CurrentCharges <= 0)
+            else 
             {
-                Debug.Log("No healing charges left!");
+                if (CurrentCharges <= 0)
+                {
+                    Debug.Log("No healing charges left!");
+                }
+                else
+                {
+                    Debug.Log("Health is already full!");
+                }
+                
+                // Máu đầy hoặc hết bình thì lập tức thu hồi phím để nhảy thẳng sang Cancel
+                weapon.EventHandler.UseInputTrigger();
             }
         }
 
@@ -56,13 +71,31 @@ namespace DucAnh.Weapons.Components
                 StopCoroutine(healCoroutine);
                 healCoroutine = null;
             }
+            
+            minHoldPassed = false;
+        }
+
+        private void HandleCurrentInputChange(bool input)
+        {
+            // Nếu người chơi nhả phím X -> Ngừng bơm máu ngay lập tức
+            if (!input && healCoroutine != null)
+            {
+                StopCoroutine(healCoroutine);
+                healCoroutine = null;
+            }
+        }
+
+        private void HandleMinHoldPassed()
+        {
+            minHoldPassed = true;
         }
 
         private System.Collections.IEnumerator HealGradually(float totalAmount)
         {
-            // Đợi 0.6 giây để chạy xong clip Anticipation (chờ cái khiên bubble xanh hiện ra)
-            yield return new WaitForSeconds(0.6f);
+            // Đợi đến khi quá trình gồng Anticipation kết thúc thành công (không bị cancel sớm)
+            yield return new WaitUntil(() => minHoldPassed);
 
+            hasStartedHealing = true;
             CurrentCharges--;
             OnChargesChanged?.Invoke(CurrentCharges, data.MaxCharges);
             Debug.Log($"Started healing for {totalAmount}. Charges left: {CurrentCharges}/{data.MaxCharges}");
@@ -90,8 +123,22 @@ namespace DucAnh.Weapons.Components
                 stats.Health.Increase(totalAmount - healedSoFar);
             }
 
-            // Hồi máu xong thì tự động ngắt (thu hồi phím X) để cất bình đi
+            // Hồi máu xong thì tự động ngắt (thu hồi phím X) để cất bình đi nếu vẫn đang cầm
             weapon.EventHandler.UseInputTrigger();
+        }
+
+        protected override void Awake()
+        {
+            base.Awake();
+            AnimationEventHandler.OnMinHoldPassed += HandleMinHoldPassed;
+            weapon.OnCurrentInputChange += HandleCurrentInputChange;
+        }
+
+        protected override void OnDestroy()
+        {
+            base.OnDestroy();
+            AnimationEventHandler.OnMinHoldPassed -= HandleMinHoldPassed;
+            weapon.OnCurrentInputChange -= HandleCurrentInputChange;
         }
     }
 }
