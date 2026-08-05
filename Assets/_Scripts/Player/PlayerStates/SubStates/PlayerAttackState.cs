@@ -80,6 +80,8 @@ public class PlayerAttackState : PlayerAbilityState
         checkFlip = true;
         canInterrupt = false;
 
+        weapon.CurrentInput = player.InputHandler.AttackInputs[(int)inputIndex];
+        
         weapon.Enter();
     }
 

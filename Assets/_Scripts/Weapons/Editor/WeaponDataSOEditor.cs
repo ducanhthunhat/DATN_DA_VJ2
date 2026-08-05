@@ -25,6 +25,11 @@ namespace DucAnh.Weapons
 
         public override void OnInspectorGUI()
         {
+            if (dataCompTypes == null || dataCompTypes.Count == 0)
+            {
+                OnRecompile();
+            }
+
             base.OnInspectorGUI();
 
             if (GUILayout.Button("Set Number of Attacks"))

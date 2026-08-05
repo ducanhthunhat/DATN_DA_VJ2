@@ -27,6 +27,7 @@ public class Player : MonoBehaviour
     public PlayerCrouchMoveState CrouchMoveState { get; private set; }
     public PlayerAttackState PrimaryAttackState { get; private set; }
     public PlayerAttackState SecondaryAttackState { get; private set; }
+    public PlayerAttackState ItemState { get; private set; }
 
     public PlayerStunState PlayerStunState { get; private set; }
 
@@ -53,6 +54,7 @@ public class Player : MonoBehaviour
 
     private Weapon primaryWeapon;
     private Weapon secondaryWeapon;
+    private Weapon itemWeapon;
     
     #endregion
 
@@ -63,9 +65,11 @@ public class Player : MonoBehaviour
 
         primaryWeapon = transform.Find("PrimaryWeapon").GetComponent<Weapon>();
         secondaryWeapon = transform.Find("SecondaryWeapon").GetComponent<Weapon>();
+        itemWeapon = transform.Find("ItemWeapon").GetComponent<Weapon>();
         
         primaryWeapon.SetCore(Core);
         secondaryWeapon.SetCore(Core);
+        itemWeapon.SetCore(Core);
 
         Stats = Core.GetCoreComponent<Stats>();
         InteractableDetector = Core.GetCoreComponent<InteractableDetector>();
@@ -87,6 +91,7 @@ public class Player : MonoBehaviour
         CrouchMoveState = new PlayerCrouchMoveState(this, StateMachine, playerData, "crouchMove");
         PrimaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", primaryWeapon, CombatInputs.primary);
         SecondaryAttackState = new PlayerAttackState(this, StateMachine, playerData, "attack", secondaryWeapon, CombatInputs.secondary);
+        ItemState = new PlayerAttackState(this, StateMachine, playerData, "attack", itemWeapon, CombatInputs.item);
         PlayerStunState = new PlayerStunState(this, StateMachine, playerData, "stun");
     }
 

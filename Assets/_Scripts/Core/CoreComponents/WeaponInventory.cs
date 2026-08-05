@@ -8,7 +8,8 @@ namespace DucAnh.CoreSystem
     {
         public event Action<int, WeaponDataSO> OnWeaponDataChanged;
 
-        [field: SerializeField] public WeaponDataSO[] weaponData { get; private set; }
+        [SerializeField] private WeaponDataSO[] _weaponData;
+        public WeaponDataSO[] weaponData => _weaponData;
 
         public bool TrySetWeapon(WeaponDataSO newData, int index, out WeaponDataSO oldData)
         {

@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37a5a6cd738645369231540dd8f9631f, type: 3}
+  m_Name: X_Healing
+  m_EditorClassIdentifier: 
+  <Icon>k__BackingField: {fileID: 1215207457, guid: 7698f902a8e73cb4b88c4738f7fb0ff5,
+    type: 3}
+  <Name>k__BackingField: healing
+  <Description>k__BackingField: 
+  <AnimatorController>k__BackingField: {fileID: 0}
+  <NumberOfAttacks>k__BackingField: 0
+  <ComponentData>k__BackingField: []
+  references:
+    version: 2
+    RefIds: []

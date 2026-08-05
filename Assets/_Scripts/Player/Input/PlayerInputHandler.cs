@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -83,6 +83,19 @@ public class PlayerInputHandler : MonoBehaviour
         if (context.canceled)
         {
             AttackInputs[(int)CombatInputs.secondary] = false;
+        }
+    }
+
+    public void OnItemInput(InputAction.CallbackContext context)
+    {
+        if (context.started)
+        {
+            AttackInputs[(int)CombatInputs.item] = true;
+        }
+
+        if (context.canceled)
+        {
+            AttackInputs[(int)CombatInputs.item] = false;
         }
     }
 
@@ -178,5 +191,6 @@ public class PlayerInputHandler : MonoBehaviour
 public enum CombatInputs
 {
     primary,
-    secondary
+    secondary,
+    item
 }

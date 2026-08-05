@@ -16,6 +16,9 @@ namespace DucAnh.Weapons.Components
 
             minHoldPassed = false;
             
+            // Đảm bảo reset biến cancel mỗi khi bắt đầu đòn đánh
+            anim.SetBool("cancel", false);
+            
             // Đồng bộ lại input hiện tại ngay khi bắt đầu đòn đánh mới
             input = weapon.CurrentInput;
             SetAnimatorParameter();
@@ -25,8 +28,9 @@ namespace DucAnh.Weapons.Components
         {
             base.HandleExit();
             
-            // Ép buộc reset biến hold về false khi vũ khí bị ngắt (ví dụ: người chơi bị choáng)
+            // Áp buộc reset biến hold và cancel về false khi vũ khí bị ngắt (ví dụ: người chơi bị choáng)
             anim.SetBool("hold", false);
+            anim.SetBool("cancel", false);
         }
 
         private void HandleCurrentInputChange(bool newInput)
@@ -54,6 +58,10 @@ namespace DucAnh.Weapons.Components
             if (minHoldPassed)
             {
                 anim.SetBool("hold", false);
+            }
+            else
+            {
+                anim.SetBool("cancel", true);
             }
         }
 
