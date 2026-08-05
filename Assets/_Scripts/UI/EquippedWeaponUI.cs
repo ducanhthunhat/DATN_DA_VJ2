@@ -25,6 +25,15 @@ namespace DucAnh.UI
             weaponIcon.color = weaponData ? Color.white : Color.clear;
         }
 
+        private void Update()
+        {
+            if (weaponData == null && weaponIcon.color.a > 0f)
+            {
+                // Ép nó tàng hình liên tục mỗi khung hình để chống lại Animator/Script khác
+                weaponIcon.color = Color.clear;
+            }
+        }
+
         private void BindChargesEvent()
         {
             if (chargesText == null) return;
@@ -94,6 +103,16 @@ namespace DucAnh.UI
             weaponInventory.TryGetWeapon((int)input, out weaponData);
             SetWeaponIcon();
             StartCoroutine(BindChargesEventDelayed());
+        }
+
+        private void Awake()
+        {
+            // Tự động tìm đúng thằng con "WeaponIcon" của chính nó, bất chấp trong Inspector gán sai
+            Transform iconTransform = transform.Find("WeaponIcon");
+            if (iconTransform != null)
+            {
+                weaponIcon = iconTransform.GetComponent<Image>();
+            }
         }
 
         private void OnEnable()

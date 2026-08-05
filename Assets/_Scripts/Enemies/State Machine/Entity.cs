@@ -74,15 +74,21 @@ public class Entity : MonoBehaviour {
 	}
 
 	public virtual bool CheckPlayerInMinAgroRange() {
-		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance, entityData.whatIsPlayer);
+		LayerMask mask = entityData.whatIsPlayer | entityData.whatIsGround;
+		RaycastHit2D hit = Physics2D.Raycast(playerCheck.position, transform.right, entityData.minAgroDistance, mask);
+		return hit.collider != null && ((1 << hit.collider.gameObject.layer) & entityData.whatIsPlayer) != 0;
 	}
 
 	public virtual bool CheckPlayerInMaxAgroRange() {
-		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.maxAgroDistance, entityData.whatIsPlayer);
+		LayerMask mask = entityData.whatIsPlayer | entityData.whatIsGround;
+		RaycastHit2D hit = Physics2D.Raycast(playerCheck.position, transform.right, entityData.maxAgroDistance, mask);
+		return hit.collider != null && ((1 << hit.collider.gameObject.layer) & entityData.whatIsPlayer) != 0;
 	}
 
 	public virtual bool CheckPlayerInCloseRangeAction() {
-		return Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance, entityData.whatIsPlayer);
+		LayerMask mask = entityData.whatIsPlayer | entityData.whatIsGround;
+		RaycastHit2D hit = Physics2D.Raycast(playerCheck.position, transform.right, entityData.closeRangeActionDistance, mask);
+		return hit.collider != null && ((1 << hit.collider.gameObject.layer) & entityData.whatIsPlayer) != 0;
 	}
 
 	public virtual void DamageHop(float velocity) {
