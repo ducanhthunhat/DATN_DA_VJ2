@@ -13,6 +13,8 @@ namespace DucAnh.Weapons.Components
 
         public event Action<int, int> OnChargesChanged;
 
+        private Coroutine healCoroutine;
+
         public override void Init()
         {
             base.Init();
@@ -34,19 +36,10 @@ namespace DucAnh.Weapons.Components
         protected override void HandleEnter()
         {
             base.HandleEnter();
-        }
 
-        private void HandleAttackAction()
-        {
             if (CurrentCharges > 0 && stats.Health.CurrentValue < stats.Health.MaxValue)
             {
-                CurrentCharges--;
-                OnChargesChanged?.Invoke(CurrentCharges, data.MaxCharges);
-                
-                // Thay vì cộng 1 cục, gọi Coroutine để bơm máu từ từ
-                StartCoroutine(HealGradually(data.Amount));
-                
-                Debug.Log($"Started healing for {data.Amount}. Charges left: {CurrentCharges}/{data.MaxCharges}");
+                healCoroutine = StartCoroutine(HealGradually(data.Amount));
             }
             else if (CurrentCharges <= 0)
             {
@@ -54,8 +47,26 @@ namespace DucAnh.Weapons.Components
             }
         }
 
+        protected override void HandleExit()
+        {
+            base.HandleExit();
+
+            if (healCoroutine != null)
+            {
+                StopCoroutine(healCoroutine);
+                healCoroutine = null;
+            }
+        }
+
         private System.Collections.IEnumerator HealGradually(float totalAmount)
         {
+            // Đợi 0.6 giây để chạy xong clip Anticipation (chờ cái khiên bubble xanh hiện ra)
+            yield return new WaitForSeconds(0.6f);
+
+            CurrentCharges--;
+            OnChargesChanged?.Invoke(CurrentCharges, data.MaxCharges);
+            Debug.Log($"Started healing for {totalAmount}. Charges left: {CurrentCharges}/{data.MaxCharges}");
+
             float healedSoFar = 0f;
             int totalTicks = 30; // Chia làm 30 cục nhỏ
             float healPerTick = totalAmount / totalTicks;
@@ -78,20 +89,9 @@ namespace DucAnh.Weapons.Components
             {
                 stats.Health.Increase(totalAmount - healedSoFar);
             }
-        }
 
-        protected override void Awake()
-        {
-            base.Awake();
-            
-            AnimationEventHandler.OnAttackAction += HandleAttackAction;
-        }
-
-        protected override void OnDestroy()
-        {
-            base.OnDestroy();
-            
-            AnimationEventHandler.OnAttackAction -= HandleAttackAction;
+            // Hồi máu xong thì tự động ngắt (thu hồi phím X) để cất bình đi
+            weapon.EventHandler.UseInputTrigger();
         }
     }
 }

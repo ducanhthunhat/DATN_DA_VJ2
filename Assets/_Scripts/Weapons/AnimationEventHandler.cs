@@ -38,7 +38,7 @@ namespace DucAnh.Weapons
         private void StopMovementTrigger() => OnStopMovement?.Invoke();
         private void AttackActionTrigger() => OnAttackAction?.Invoke();
         private void MinHoldPassedTrigger() => OnMinHoldPassed?.Invoke();
-        private void UseInputTrigger() => OnUseInput?.Invoke();
+        public void UseInputTrigger() => OnUseInput?.Invoke();
 
         private void SetOptionalSpriteEnabled() => OnSetOptionalSpriteActive?.Invoke(true);
         private void SetOptionalSpriteDisabled() => OnSetOptionalSpriteActive?.Invoke(false);

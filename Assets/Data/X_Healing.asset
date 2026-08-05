@@ -36,6 +36,7 @@ MonoBehaviour:
       type: {class: InputHoldData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
         name: InputHoldData
+        <AutoRelease>k__BackingField: 0
     - rid: 6195232474568851459
       type: {class: WeaponSpriteData, ns: DucAnh.Weapons.Components, asm: Assembly-CSharp}
       data:
