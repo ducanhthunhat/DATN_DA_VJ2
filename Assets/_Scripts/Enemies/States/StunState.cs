@@ -49,7 +49,7 @@ public class StunState : State {
 			isStunTimeOver = true;
 		}
 
-		if (isGrounded && Time.time >= startTime + stateData.stunKnockbackTime && !isMovementStopped) {
+		if (isGrounded && Time.time >= startTime + stateData.stunKnockbackTime) {
 			isMovementStopped = true;
 			Movement?.SetVelocityX(0f);
 		}

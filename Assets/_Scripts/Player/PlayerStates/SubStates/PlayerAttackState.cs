@@ -53,6 +53,11 @@ public class PlayerAttackState : PlayerAbilityState
 
         weapon.CurrentInput = attackInputs[inputIndex];
 
+        if (isGrounded && inputIndex == (int)CombatInputs.item)
+        {
+            Movement?.SetVelocityX(0f);
+        }
+
         if (checkFlip)
         {
             Movement.CheckIfShouldFlip(xInput);
@@ -61,7 +66,10 @@ public class PlayerAttackState : PlayerAbilityState
         if (!canInterrupt)
             return;
 
-        if (xInput != 0 || attackInputs[0] || attackInputs[1])
+        // Nếu là item (hồi máu), không cho phép di chuyển ngắt ngang (chỉ thả X mới ngắt)
+        bool movementInterrupt = (inputIndex != (int)CombatInputs.item) && (xInput != 0);
+
+        if (movementInterrupt || attackInputs[0] || attackInputs[1])
         {
             isAbilityDone = true;
         }
@@ -82,6 +90,11 @@ public class PlayerAttackState : PlayerAbilityState
 
         weapon.CurrentInput = player.InputHandler.AttackInputs[(int)inputIndex];
         
+        if (isGrounded && inputIndex == (int)CombatInputs.item)
+        {
+            Movement?.SetVelocityX(0f);
+        }
+
         weapon.Enter();
     }
 

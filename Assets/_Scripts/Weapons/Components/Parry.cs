@@ -80,18 +80,18 @@ namespace DucAnh.Weapons.Components
         {
             /*
              * The modifier is only used to detect an enemy making contact with the player from allowed directions.
-             * If that happens we still need to inform the entity that it has been parried.
+             * If that happens we trigger the parry effects.
              */
-            if (!TryParry(parriedGameObject, new Combat.Parry.ParryData(Core.Root), out _, out _))
-            {
-                return;
-            }
-
             weapon.Anim.SetTrigger("parry");
 
             OnParry?.Invoke(parriedGameObject);
 
             particleManager.StartWithRandomRotation(currentAttackData.Particles, currentAttackData.ParticlesOffset);
+
+            /*
+             * Inform the entity that it has been parried (if it implements IParryable).
+             */
+            TryParry(parriedGameObject, new Combat.Parry.ParryData(Core.Root), out _, out _);
         }
 
         private void HandleEnterAttackPhase(AttackPhases phase)
