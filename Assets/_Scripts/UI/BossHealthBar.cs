@@ -65,7 +65,7 @@ public class BossHealthBar : MonoBehaviour
         currentBossStats.Health.OnCurrentValueZero += HideBossHealthBar;
     }
 
-    private void HideBossHealthBar()
+    public void HideBossHealthBar()
     {
         if (healthBarContainer != null)
         {

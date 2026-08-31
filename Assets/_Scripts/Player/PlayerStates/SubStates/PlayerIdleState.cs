@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -21,6 +21,10 @@ public class PlayerIdleState : PlayerGroundedState {
 
 	public override void LogicUpdate() {
 		base.LogicUpdate();
+
+		// BẮT BUỘC ÉP VẬN TỐC X VỀ 0 LIÊN TỤC MỖI FRAME KHI ĐỨNG IM
+		// Chống hiện tượng trôi (drift) do lỗi ma sát hoặc ngoại lực của Unity Physics
+		Movement?.SetVelocityX(0f);
 
 		if (!isExitingState) {
 			if (xInput != 0) {

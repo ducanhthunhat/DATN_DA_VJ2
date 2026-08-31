@@ -40,6 +40,9 @@ public class UICanvas : MonoBehaviour
         canvasGroup.alpha = 1f;
         canvasGroup.interactable = true;
         canvasGroup.blocksRaycasts = true;
+        
+        // Cực kỳ quan trọng: Ép UI này hiển thị trên cùng (đè lên các UI khác)
+        transform.SetAsLastSibling();
     }
 
     public virtual void Close(float time)

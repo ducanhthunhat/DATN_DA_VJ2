@@ -10,6 +10,13 @@ namespace DucAnh.Weapons.Components
 
         private bool minHoldPassed;
 
+        private int holdHash;
+        private int cancelHash;
+        private bool hasHoldParam;
+        private bool hasCancelParam;
+
+        private RuntimeAnimatorController lastController;
+
         public override void Init()
         {
             base.Init();
@@ -19,10 +26,12 @@ namespace DucAnh.Weapons.Components
         {
             base.HandleEnter();
 
+            UpdateParameterCache();
+
             minHoldPassed = false;
             
             // Đảm bảo reset biến cancel mỗi khi bắt đầu đòn đánh
-            anim.SetBool("cancel", false);
+            if (hasCancelParam) anim.SetBool(cancelHash, false);
             
             // Đồng bộ lại input hiện tại ngay khi bắt đầu đòn đánh mới
             input = weapon.CurrentInput;
@@ -34,15 +43,31 @@ namespace DucAnh.Weapons.Components
             base.HandleExit();
             
             // Áp buộc reset biến hold và cancel về false khi vũ khí bị ngắt (ví dụ: người chơi bị choáng)
-            anim.SetBool("hold", false);
-            anim.SetBool("cancel", false);
+            if (hasHoldParam) anim.SetBool(holdHash, false);
+            if (hasCancelParam) anim.SetBool(cancelHash, false);
         }
 
         private void HandleCurrentInputChange(bool newInput)
         {
             input = newInput;
-
             SetAnimatorParameter();
+        }
+
+        private void UpdateParameterCache()
+        {
+            // Chỉ chạy vòng lặp kiểm tra lại nếu Animator Controller bị đổi vũ khí (để tránh giật lag do rác bộ nhớ)
+            if (anim.runtimeAnimatorController == lastController) return;
+            
+            lastController = anim.runtimeAnimatorController;
+            
+            hasHoldParam = false;
+            hasCancelParam = false;
+            
+            foreach (var param in anim.parameters)
+            {
+                if (param.nameHash == holdHash) hasHoldParam = true;
+                if (param.nameHash == cancelHash) hasCancelParam = true;
+            }
         }
 
         private void HandleMinHoldPassed()
@@ -56,17 +81,17 @@ namespace DucAnh.Weapons.Components
         {
             if (input)
             {
-                anim.SetBool("hold", input);
+                if (hasHoldParam) anim.SetBool(holdHash, input);
                 return;
             }
 
             if (minHoldPassed)
             {
-                anim.SetBool("hold", false);
+                if (hasHoldParam) anim.SetBool(holdHash, false);
             }
             else
             {
-                anim.SetBool("cancel", true);
+                if (hasCancelParam) anim.SetBool(cancelHash, true);
             }
         }
 
@@ -75,6 +100,9 @@ namespace DucAnh.Weapons.Components
             base.Awake();
 
             anim = GetComponentInChildren<Animator>();
+
+            holdHash = Animator.StringToHash("hold");
+            cancelHash = Animator.StringToHash("cancel");
 
             weapon.OnCurrentInputChange += HandleCurrentInputChange;
             AnimationEventHandler.OnMinHoldPassed += HandleMinHoldPassed;

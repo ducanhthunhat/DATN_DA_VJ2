@@ -19,7 +19,14 @@ namespace DucAnh.CoreSystem
         private void HandleWeaponDiscarded(WeaponDataSO discardedWeaponData)
         {
             var spawnPoint = movement.FindRelativePoint(spawnOffset);
-            var weaponPickup = Instantiate(weaponPickupPrefab, spawnPoint, Quaternion.identity);
+            
+            Transform parent = null;
+            if (GameManager.Instance != null && GameManager.Instance.CurrentLevelInstance != null)
+            {
+                parent = GameManager.Instance.CurrentLevelInstance.transform;
+            }
+
+            var weaponPickup = Instantiate(weaponPickupPrefab, spawnPoint, Quaternion.identity, parent);
 
             weaponPickup.SetContext(discardedWeaponData);
 

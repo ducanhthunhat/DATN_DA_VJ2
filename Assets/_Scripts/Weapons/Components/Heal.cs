@@ -15,12 +15,16 @@ namespace DucAnh.Weapons.Components
 
         private Coroutine healCoroutine;
         private bool minHoldPassed;
-        private bool hasStartedHealing;
 
         public override void Init()
         {
             base.Init();
             data = weapon.Data.GetData<HealData>();
+            if (data != null)
+            {
+                CurrentCharges = data.MaxCharges;
+                OnChargesChanged?.Invoke(CurrentCharges, data.MaxCharges);
+            }
         }
 
         protected override void Start()
@@ -40,7 +44,6 @@ namespace DucAnh.Weapons.Components
             base.HandleEnter();
             
             minHoldPassed = false;
-            hasStartedHealing = false;
 
             if (CurrentCharges > 0 && stats.Health.CurrentValue < stats.Health.MaxValue)
             {
@@ -95,7 +98,6 @@ namespace DucAnh.Weapons.Components
             // Đợi đến khi quá trình gồng Anticipation kết thúc thành công (không bị cancel sớm)
             yield return new WaitUntil(() => minHoldPassed);
 
-            hasStartedHealing = true;
             CurrentCharges--;
             OnChargesChanged?.Invoke(CurrentCharges, data.MaxCharges);
             Debug.Log($"Started healing for {totalAmount}. Charges left: {CurrentCharges}/{data.MaxCharges}");

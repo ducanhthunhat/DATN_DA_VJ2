@@ -22,7 +22,7 @@ namespace DucAnh.Weapons
         public int CurrentAttackCounter
         {
             get => currentAttackCounter;
-            private set => currentAttackCounter = value >= Data.NumberOfAttacks ? 0 : value;
+            private set => currentAttackCounter = (Data == null || value >= Data.NumberOfAttacks) ? 0 : value;
         }
 
         public bool CurrentInput
@@ -146,6 +146,12 @@ namespace DucAnh.Weapons
 
         private void OnEnable()
         {
+            // Đảm bảo biến không bị null do tính năng Hot Reload của Unity
+            if (attackCounterResetTimeNotifier == null)
+            {
+                attackCounterResetTimeNotifier = new TimeNotifier();
+            }
+
             EventHandler.OnUseInput += HandleUseInput;
             attackCounterResetTimeNotifier.OnNotify += ResetAttackCounter;
         }

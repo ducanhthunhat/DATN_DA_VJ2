@@ -184,7 +184,7 @@ MonoBehaviour:
   damageAmount: 10
   knockbackStrength: 15
   knockbackAngle: {x: 0, y: 1}
-  invincibilityDuration: 2
+  invincibilityDuration: 1
 --- !u!1 &2594074142153511997
 GameObject:
   m_ObjectHideFlags: 0

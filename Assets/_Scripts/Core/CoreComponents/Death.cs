@@ -22,6 +22,13 @@ namespace DucAnh.CoreSystem
             }
         
             core.transform.parent.gameObject.SetActive(false);
+
+            // Kiểm tra xem đối tượng vừa chết có phải là Player không
+            if (core.transform.parent.CompareTag("Player"))
+            {
+                // Thay vì gọi Restart ngay, ta bật bảng GameOver (sau 3s nó sẽ tự gọi Restart)
+                global::UIManager.Instance.OpenUI<DucAnh.GameOverPanel>();
+            }
         }
 
         private void OnEnable()

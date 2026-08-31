@@ -113,6 +113,40 @@ public class UIManager : Singleton<UIManager>
         }
     }
 
+    private void Update()
+    {
+        // Lắng nghe phím ESC bằng New Input System
+        if (UnityEngine.InputSystem.Keyboard.current != null && UnityEngine.InputSystem.Keyboard.current.escapeKey.wasPressedThisFrame)
+        {
+            // Không cho bấm ESC bậy bạ nếu đang Loading hoặc Game Over
+            if (IsUIOpened<LoadLVPanel>() || IsUIOpened<GameOverPanel>())
+                return;
+
+            // Nếu màn hình Cài đặt (Options) đang bật -> Bấm ESC để đóng nó lại
+            if (IsUIOpened<OptionsPanel>())
+            {
+                CloseUIDirectly<OptionsPanel>();
+                return;
+            }
+
+            // Nếu màn hình Pause đang bật -> Bấm ESC để đóng và chơi tiếp
+            if (IsUIOpened<PausePanel>())
+            {
+                CloseUIDirectly<PausePanel>();
+                ResumeGame();
+                return;
+            }
+
+            // Nếu đang ở sảnh (StartPanel), đã tắt hết Options, bấm ESC thì không làm gì
+            if (IsUIOpened<StartPanel>())
+                return;
+
+            // Nếu không có Menu nào đang bật (đang trong lúc chơi) -> Bấm ESC để bật Pause Game
+            PauseGame(); 
+            OpenUI<PausePanel>();
+        }
+    }
+
     public void PauseGame()
     {
         isPaused = !isPaused;
